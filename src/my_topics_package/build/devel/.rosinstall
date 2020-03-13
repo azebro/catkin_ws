@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/adam/catkin_ws/src/my_topics_package/build/devel/setup.sh

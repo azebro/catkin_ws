@@ -1,0 +1,4 @@
+<launch>
+ <node pkg="lab03_services" type="my_service_server.py" name="lab03" output ="screen">
+ </node>
+</launch>

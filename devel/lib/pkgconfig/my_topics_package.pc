@@ -1,0 +1,8 @@
+prefix=/home/adam/catkin_ws/devel
+
+Name: my_topics_package
+Description: Description of my_topics_package
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
