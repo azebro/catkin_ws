@@ -1,0 +1,9 @@
+#goal definition
+int32 numberOfTurtles
+---
+#result definition
+string turtlesCollected
+#int32 collectionSequence
+---
+#feedback
+string progress
