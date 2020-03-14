@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentGoal.js"
   "/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentResult.js"
   "/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentAction.js"
+  "/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/TspList.js"
 )
 
 # Per-language clean rules from dependency scanning.

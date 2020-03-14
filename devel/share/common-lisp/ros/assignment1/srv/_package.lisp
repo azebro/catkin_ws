@@ -1,0 +1,15 @@
+(cl:defpackage assignment1-srv
+  (:use )
+  (:export
+   "TSPLIST"
+   "<TSPLIST-REQUEST>"
+   "TSPLIST-REQUEST"
+   "<TSPLIST-RESPONSE>"
+   "TSPLIST-RESPONSE"
+   "TURTLESPAWN"
+   "<TURTLESPAWN-REQUEST>"
+   "TURTLESPAWN-REQUEST"
+   "<TURTLESPAWN-RESPONSE>"
+   "TURTLESPAWN-RESPONSE"
+  ))
+

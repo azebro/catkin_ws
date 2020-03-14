@@ -38,12 +38,12 @@ def spawnTurtles(numberOfTurtles):
     turtlesList = []
     
     rospy.loginfo("Spawning targets")
-    for i in range(0, numberOfTurtles):
+    for i in range(2, numberOfTurtles+2):
         x = random.randint(1,10)
         y = random.randint(5,10)
-        name = "ct"+str(i)
+        name = "turtle" + str(i)
         spawnTurtle(x, y, name)
-        turtlesList.append([x, y, 0, name])
+        turtlesList.append([x, y, 0, i])
     rospy.loginfo("Targets created" + str(turtlesList))
     result = np.array(turtlesList)
 

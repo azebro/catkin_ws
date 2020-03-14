@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "/home/adam/catkin_ws/devel/include/assignment1/StartAssignmentGoal.h"
   "/home/adam/catkin_ws/devel/include/assignment1/StartAssignmentResult.h"
   "/home/adam/catkin_ws/devel/include/assignment1/StartAssignmentAction.h"
+  "/home/adam/catkin_ws/devel/include/assignment1/TspList.h"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentGoal.l"
   "/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentResult.l"
   "/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentAction.l"
+  "/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/srv/TspList.l"
   "/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/manifest.l"
 )
 

@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "/home/adam/catkin_ws/devel/share/common-lisp/ros/assignment1/msg/StartAssignmentGoal.lisp"
   "/home/adam/catkin_ws/devel/share/common-lisp/ros/assignment1/msg/StartAssignmentResult.lisp"
   "/home/adam/catkin_ws/devel/share/common-lisp/ros/assignment1/msg/StartAssignmentAction.lisp"
+  "/home/adam/catkin_ws/devel/share/common-lisp/ros/assignment1/srv/TspList.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

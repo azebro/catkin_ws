@@ -10,7 +10,7 @@ def calculateTSP(request):
     turtleList = np.array(request.turtles)
     tspList = findPath(turtleList)
     response = TspListResponse()
-    response.sequence = tspList[:,0]
+    response.sequence = tspList[:,0].tolist()
     rospy.loginfo("TSP calculation completed")
 
 def findPath(turtles):
@@ -26,3 +26,9 @@ def findPath(turtles):
         notVisited.remove(distance[0][distance[1].argmin()])
         idx = int(distance[0][distance[1].argmin()])
     return tsp
+
+
+rospy.init_node("TSP_server")
+sceneService = rospy.Service("/calculate_tsp", TspList, calculateTSP)
+scene = TspList()
+rospy.spin()

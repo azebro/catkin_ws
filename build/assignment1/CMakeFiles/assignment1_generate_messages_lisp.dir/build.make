@@ -60,6 +60,7 @@ assignment1/CMakeFiles/assignment1_generate_messages_lisp: /home/adam/catkin_ws/
 assignment1/CMakeFiles/assignment1_generate_messages_lisp: /home/adam/catkin_ws/devel/share/common-lisp/ros/assignment1/msg/StartAssignmentGoal.lisp
 assignment1/CMakeFiles/assignment1_generate_messages_lisp: /home/adam/catkin_ws/devel/share/common-lisp/ros/assignment1/msg/StartAssignmentResult.lisp
 assignment1/CMakeFiles/assignment1_generate_messages_lisp: /home/adam/catkin_ws/devel/share/common-lisp/ros/assignment1/msg/StartAssignmentAction.lisp
+assignment1/CMakeFiles/assignment1_generate_messages_lisp: /home/adam/catkin_ws/devel/share/common-lisp/ros/assignment1/srv/TspList.lisp
 
 
 /home/adam/catkin_ws/devel/share/common-lisp/ros/assignment1/msg/StartAssignmentActionResult.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
@@ -117,6 +118,11 @@ assignment1/CMakeFiles/assignment1_generate_messages_lisp: /home/adam/catkin_ws/
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Lisp code from assignment1/StartAssignmentAction.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentAction.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/common-lisp/ros/assignment1/msg
 
+/home/adam/catkin_ws/devel/share/common-lisp/ros/assignment1/srv/TspList.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
+/home/adam/catkin_ws/devel/share/common-lisp/ros/assignment1/srv/TspList.lisp: /home/adam/catkin_ws/src/assignment1/srv/TspList.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Lisp code from assignment1/TspList.srv"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/adam/catkin_ws/src/assignment1/srv/TspList.srv -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/common-lisp/ros/assignment1/srv
+
 assignment1_generate_messages_lisp: assignment1/CMakeFiles/assignment1_generate_messages_lisp
 assignment1_generate_messages_lisp: /home/adam/catkin_ws/devel/share/common-lisp/ros/assignment1/msg/StartAssignmentActionResult.lisp
 assignment1_generate_messages_lisp: /home/adam/catkin_ws/devel/share/common-lisp/ros/assignment1/msg/StartAssignmentFeedback.lisp
@@ -125,6 +131,7 @@ assignment1_generate_messages_lisp: /home/adam/catkin_ws/devel/share/common-lisp
 assignment1_generate_messages_lisp: /home/adam/catkin_ws/devel/share/common-lisp/ros/assignment1/msg/StartAssignmentGoal.lisp
 assignment1_generate_messages_lisp: /home/adam/catkin_ws/devel/share/common-lisp/ros/assignment1/msg/StartAssignmentResult.lisp
 assignment1_generate_messages_lisp: /home/adam/catkin_ws/devel/share/common-lisp/ros/assignment1/msg/StartAssignmentAction.lisp
+assignment1_generate_messages_lisp: /home/adam/catkin_ws/devel/share/common-lisp/ros/assignment1/srv/TspList.lisp
 assignment1_generate_messages_lisp: assignment1/CMakeFiles/assignment1_generate_messages_lisp.dir/build.make
 
 .PHONY : assignment1_generate_messages_lisp

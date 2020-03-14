@@ -9,6 +9,8 @@ project(assignment1)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   rospy
+  std_msgs
+  message_generation
   actionlib_msgs
 )
 
@@ -53,11 +55,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+ add_service_files(
+   FILES
+   TspList.srv
+ )
 
 ## Generate actions in the 'action' folder
  add_action_files(
