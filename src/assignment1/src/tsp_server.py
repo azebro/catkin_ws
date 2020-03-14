@@ -2,21 +2,28 @@
 
 import numpy as np
 import rospy
-from assignment1.srv import TspList, TspListResponse
+import pickle
+from assignment1.srv import Tsp, TspResponse
 
 
 def calculateTSP(request):
     rospy.loginfo("Calculate TSP called")
-    turtleList = np.array(request.turtles)
+    turtleList = pickle.loads(request.turtles)
+    rospy.loginfo(turtleList.shape)
     tspList = findPath(turtleList)
-    response = TspListResponse()
-    response.sequence = tspList[:,0].tolist()
+    response = TspResponse()
+    rospy.loginfo("TSP calculated")
+    response.sequence = str(tspList[:,0])
     rospy.loginfo("TSP calculation completed")
+    return response
 
 def findPath(turtles):
-    idx = 0
+    idx = turtles[0,3]
     notVisited = turtles[turtles[:,3] != idx][:,3].tolist()
-    tsp = np.array([[0,0]])
+    #rospy.loginfo(notVisited)
+    #rospy.loginfo(turtles[turtles[:,3] == idx])
+
+    tsp = np.array([[idx,0]])
     while notVisited:
         currentX = turtles[turtles[:,3] == idx][0,0]
         currentY = turtles[turtles[:,3] == idx][0,1]
@@ -29,6 +36,6 @@ def findPath(turtles):
 
 
 rospy.init_node("TSP_server")
-sceneService = rospy.Service("/calculate_tsp", TspList, calculateTSP)
-scene = TspList()
+sceneService = rospy.Service("/calculate_tsp", Tsp, calculateTSP)
+scene = Tsp()
 rospy.spin()

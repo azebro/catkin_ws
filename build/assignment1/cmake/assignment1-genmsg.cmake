@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "assignment1: 7 messages, 1 services")
+message(STATUS "assignment1: 7 messages, 3 services")
 
 set(MSG_I_FLAGS "-Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg;-Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg")
 
@@ -22,6 +22,11 @@ add_custom_target(_assignment1_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "assignment1" "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionResult.msg" "actionlib_msgs/GoalID:actionlib_msgs/GoalStatus:assignment1/StartAssignmentResult:std_msgs/Header"
 )
 
+get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv" NAME_WE)
+add_custom_target(_assignment1_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "assignment1" "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv" ""
+)
+
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg" NAME_WE)
 add_custom_target(_assignment1_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "assignment1" "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg" ""
@@ -32,14 +37,19 @@ add_custom_target(_assignment1_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "assignment1" "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentResult.msg" ""
 )
 
-get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv" NAME_WE)
+get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/Tsp.srv" NAME_WE)
 add_custom_target(_assignment1_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "assignment1" "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "assignment1" "/home/adam/catkin_ws/src/assignment1/srv/Tsp.srv" ""
 )
 
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionFeedback.msg" NAME_WE)
 add_custom_target(_assignment1_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "assignment1" "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionFeedback.msg" "actionlib_msgs/GoalID:actionlib_msgs/GoalStatus:assignment1/StartAssignmentFeedback:std_msgs/Header"
+)
+
+get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv" NAME_WE)
+add_custom_target(_assignment1_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "assignment1" "/home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv" ""
 )
 
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg" NAME_WE)
@@ -108,7 +118,19 @@ _generate_msg_cpp(assignment1
 
 ### Generating Services
 _generate_srv_cpp(assignment1
+  "/home/adam/catkin_ws/src/assignment1/srv/Tsp.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/assignment1
+)
+_generate_srv_cpp(assignment1
   "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/assignment1
+)
+_generate_srv_cpp(assignment1
+  "/home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/assignment1
@@ -128,13 +150,17 @@ add_dependencies(assignment1_generate_messages assignment1_generate_messages_cpp
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionResult.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_cpp _assignment1_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv" NAME_WE)
+add_dependencies(assignment1_generate_messages_cpp _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_cpp _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentResult.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_cpp _assignment1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv" NAME_WE)
+get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/Tsp.srv" NAME_WE)
 add_dependencies(assignment1_generate_messages_cpp _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionFeedback.msg" NAME_WE)
+add_dependencies(assignment1_generate_messages_cpp _assignment1_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv" NAME_WE)
 add_dependencies(assignment1_generate_messages_cpp _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_cpp _assignment1_generate_messages_check_deps_${_filename})
@@ -197,7 +223,19 @@ _generate_msg_eus(assignment1
 
 ### Generating Services
 _generate_srv_eus(assignment1
+  "/home/adam/catkin_ws/src/assignment1/srv/Tsp.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/assignment1
+)
+_generate_srv_eus(assignment1
   "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/assignment1
+)
+_generate_srv_eus(assignment1
+  "/home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/assignment1
@@ -217,13 +255,17 @@ add_dependencies(assignment1_generate_messages assignment1_generate_messages_eus
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionResult.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_eus _assignment1_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv" NAME_WE)
+add_dependencies(assignment1_generate_messages_eus _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_eus _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentResult.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_eus _assignment1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv" NAME_WE)
+get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/Tsp.srv" NAME_WE)
 add_dependencies(assignment1_generate_messages_eus _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionFeedback.msg" NAME_WE)
+add_dependencies(assignment1_generate_messages_eus _assignment1_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv" NAME_WE)
 add_dependencies(assignment1_generate_messages_eus _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_eus _assignment1_generate_messages_check_deps_${_filename})
@@ -286,7 +328,19 @@ _generate_msg_lisp(assignment1
 
 ### Generating Services
 _generate_srv_lisp(assignment1
+  "/home/adam/catkin_ws/src/assignment1/srv/Tsp.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/assignment1
+)
+_generate_srv_lisp(assignment1
   "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/assignment1
+)
+_generate_srv_lisp(assignment1
+  "/home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/assignment1
@@ -306,13 +360,17 @@ add_dependencies(assignment1_generate_messages assignment1_generate_messages_lis
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionResult.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_lisp _assignment1_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv" NAME_WE)
+add_dependencies(assignment1_generate_messages_lisp _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_lisp _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentResult.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_lisp _assignment1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv" NAME_WE)
+get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/Tsp.srv" NAME_WE)
 add_dependencies(assignment1_generate_messages_lisp _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionFeedback.msg" NAME_WE)
+add_dependencies(assignment1_generate_messages_lisp _assignment1_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv" NAME_WE)
 add_dependencies(assignment1_generate_messages_lisp _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_lisp _assignment1_generate_messages_check_deps_${_filename})
@@ -375,7 +433,19 @@ _generate_msg_nodejs(assignment1
 
 ### Generating Services
 _generate_srv_nodejs(assignment1
+  "/home/adam/catkin_ws/src/assignment1/srv/Tsp.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/assignment1
+)
+_generate_srv_nodejs(assignment1
   "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/assignment1
+)
+_generate_srv_nodejs(assignment1
+  "/home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/assignment1
@@ -395,13 +465,17 @@ add_dependencies(assignment1_generate_messages assignment1_generate_messages_nod
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionResult.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_nodejs _assignment1_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv" NAME_WE)
+add_dependencies(assignment1_generate_messages_nodejs _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_nodejs _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentResult.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_nodejs _assignment1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv" NAME_WE)
+get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/Tsp.srv" NAME_WE)
 add_dependencies(assignment1_generate_messages_nodejs _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionFeedback.msg" NAME_WE)
+add_dependencies(assignment1_generate_messages_nodejs _assignment1_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv" NAME_WE)
 add_dependencies(assignment1_generate_messages_nodejs _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_nodejs _assignment1_generate_messages_check_deps_${_filename})
@@ -464,7 +538,19 @@ _generate_msg_py(assignment1
 
 ### Generating Services
 _generate_srv_py(assignment1
+  "/home/adam/catkin_ws/src/assignment1/srv/Tsp.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/assignment1
+)
+_generate_srv_py(assignment1
   "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/assignment1
+)
+_generate_srv_py(assignment1
+  "/home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/assignment1
@@ -484,13 +570,17 @@ add_dependencies(assignment1_generate_messages assignment1_generate_messages_py)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionResult.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_py _assignment1_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv" NAME_WE)
+add_dependencies(assignment1_generate_messages_py _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_py _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentResult.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_py _assignment1_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv" NAME_WE)
+get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/Tsp.srv" NAME_WE)
 add_dependencies(assignment1_generate_messages_py _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionFeedback.msg" NAME_WE)
+add_dependencies(assignment1_generate_messages_py _assignment1_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv" NAME_WE)
 add_dependencies(assignment1_generate_messages_py _assignment1_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg" NAME_WE)
 add_dependencies(assignment1_generate_messages_py _assignment1_generate_messages_check_deps_${_filename})

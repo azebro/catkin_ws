@@ -60,7 +60,9 @@ assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/de
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentGoal.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentResult.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentAction.py
+assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_Tsp.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TspList.py
+assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TurtleSpawn.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py
 
@@ -120,10 +122,20 @@ assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/de
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python from MSG assignment1/StartAssignmentAction"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentAction.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
 
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_Tsp.py: /opt/ros/melodic/lib/genpy/gensrv_py.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_Tsp.py: /home/adam/catkin_ws/src/assignment1/srv/Tsp.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Python code from SRV assignment1/Tsp"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/adam/catkin_ws/src/assignment1/srv/Tsp.srv -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv
+
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TspList.py: /opt/ros/melodic/lib/genpy/gensrv_py.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TspList.py: /home/adam/catkin_ws/src/assignment1/srv/TspList.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Python code from SRV assignment1/TspList"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Python code from SRV assignment1/TspList"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/adam/catkin_ws/src/assignment1/srv/TspList.srv -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv
+
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TurtleSpawn.py: /opt/ros/melodic/lib/genpy/gensrv_py.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TurtleSpawn.py: /home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python code from SRV assignment1/TurtleSpawn"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv
 
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionResult.py
@@ -133,8 +145,10 @@ assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/de
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentGoal.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentResult.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentAction.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_Tsp.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TspList.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Python msg __init__.py for assignment1"
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TurtleSpawn.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Python msg __init__.py for assignment1"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg --initpy
 
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -145,8 +159,10 @@ assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/de
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentGoal.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentResult.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentAction.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_Tsp.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TspList.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python srv __init__.py for assignment1"
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TurtleSpawn.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Python srv __init__.py for assignment1"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv --initpy
 
 assignment1_generate_messages_py: assignment1/CMakeFiles/assignment1_generate_messages_py
@@ -157,7 +173,9 @@ assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentGoal.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentResult.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentAction.py
+assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_Tsp.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TspList.py
+assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TurtleSpawn.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py
 assignment1_generate_messages_py: assignment1/CMakeFiles/assignment1_generate_messages_py.dir/build.make

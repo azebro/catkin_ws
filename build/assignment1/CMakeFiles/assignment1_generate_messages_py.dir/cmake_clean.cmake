@@ -7,7 +7,9 @@ file(REMOVE_RECURSE
   "/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentGoal.py"
   "/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentResult.py"
   "/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentAction.py"
+  "/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_Tsp.py"
   "/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TspList.py"
+  "/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TurtleSpawn.py"
   "/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py"
   "/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py"
 )

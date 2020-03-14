@@ -60,7 +60,9 @@ assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_w
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentGoal.js
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentResult.js
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentAction.js
+assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/Tsp.js
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/TspList.js
+assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/TurtleSpawn.js
 
 
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentActionResult.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -118,10 +120,20 @@ assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_w
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Javascript code from assignment1/StartAssignmentAction.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentAction.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
 
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/Tsp.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/Tsp.js: /home/adam/catkin_ws/src/assignment1/srv/Tsp.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Javascript code from assignment1/Tsp.srv"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/src/assignment1/srv/Tsp.srv -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv
+
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/TspList.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/TspList.js: /home/adam/catkin_ws/src/assignment1/srv/TspList.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Javascript code from assignment1/TspList.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Javascript code from assignment1/TspList.srv"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/src/assignment1/srv/TspList.srv -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv
+
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/TurtleSpawn.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/TurtleSpawn.js: /home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Javascript code from assignment1/TurtleSpawn.srv"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv
 
 assignment1_generate_messages_nodejs: assignment1/CMakeFiles/assignment1_generate_messages_nodejs
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentActionResult.js
@@ -131,7 +143,9 @@ assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentGoal.js
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentResult.js
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentAction.js
+assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/Tsp.js
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/TspList.js
+assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/TurtleSpawn.js
 assignment1_generate_messages_nodejs: assignment1/CMakeFiles/assignment1_generate_messages_nodejs.dir/build.make
 
 .PHONY : assignment1_generate_messages_nodejs

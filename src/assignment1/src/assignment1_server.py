@@ -4,6 +4,7 @@ import rospy
 import actionlib
 import random
 import numpy as np
+import pickle
 
 from math import  sqrt
 
@@ -12,6 +13,8 @@ from std_srvs.srv import *
 from turtlesim.msg import *
 from turtlesim.srv import *
 from assignment1.msg import StartAssignmentResult, StartAssignmentFeedback, StartAssignmentAction
+from assignment1.srv import Tsp, TspResponse
+
 
 
 def execute(goal):
@@ -22,6 +25,13 @@ def execute(goal):
     rospy.loginfo("Creating number of requested turtles: " + str(goal.numberOfTurtles))
     result = spawnTurtles(goal.numberOfTurtles)
     rospy.loginfo(result)
+    pickled = pickle.dumps(np.concatenate((np.array([mainTurtle.x, mainTurtle.y, mainTurtle.theta, 1]).reshape(1,4), result), axis=0), protocol=0)
+    tsp = Tsp()
+    tsp.turtles = pickled
+    route = calculateRoute(pickled)
+    rospy.loginfo("Route received: " + str(route))
+    
+    
    
     output = StartAssignmentResult()
      
@@ -45,9 +55,7 @@ def spawnTurtles(numberOfTurtles):
         spawnTurtle(x, y, name)
         turtlesList.append([x, y, 0, i])
     rospy.loginfo("Targets created" + str(turtlesList))
-    result = np.array(turtlesList)
-
-    return result
+    return np.array(turtlesList)
 
 def spawnTurtle(x, y, name, theta = 0):
     spawnService = rospy.ServiceProxy("/spawn", Spawn)
@@ -69,6 +77,8 @@ rospy.init_node("assignment")
 mainTurtle = Pose()
 actionName = "startAssignment"
 rospy.Subscriber("/turtle1/pose", Pose, mainPose)
+calculateRoute = rospy.ServiceProxy("/calculate_tsp", Tsp)
+calculateRoute.wait_for_service()
 removeTurtle = rospy.ServiceProxy("/kill", Kill)
 clear = rospy.ServiceProxy("/clear", Empty)
 actionServer = actionlib.SimpleActionServer(actionName, StartAssignmentAction, execute_cb=execute, auto_start = False)

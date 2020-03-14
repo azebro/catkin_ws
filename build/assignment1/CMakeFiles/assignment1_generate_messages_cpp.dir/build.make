@@ -60,7 +60,9 @@ assignment1/CMakeFiles/assignment1_generate_messages_cpp: /home/adam/catkin_ws/d
 assignment1/CMakeFiles/assignment1_generate_messages_cpp: /home/adam/catkin_ws/devel/include/assignment1/StartAssignmentGoal.h
 assignment1/CMakeFiles/assignment1_generate_messages_cpp: /home/adam/catkin_ws/devel/include/assignment1/StartAssignmentResult.h
 assignment1/CMakeFiles/assignment1_generate_messages_cpp: /home/adam/catkin_ws/devel/include/assignment1/StartAssignmentAction.h
+assignment1/CMakeFiles/assignment1_generate_messages_cpp: /home/adam/catkin_ws/devel/include/assignment1/Tsp.h
 assignment1/CMakeFiles/assignment1_generate_messages_cpp: /home/adam/catkin_ws/devel/include/assignment1/TspList.h
+assignment1/CMakeFiles/assignment1_generate_messages_cpp: /home/adam/catkin_ws/devel/include/assignment1/TurtleSpawn.h
 
 
 /home/adam/catkin_ws/devel/include/assignment1/StartAssignmentActionResult.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
@@ -125,12 +127,26 @@ assignment1/CMakeFiles/assignment1_generate_messages_cpp: /home/adam/catkin_ws/d
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating C++ code from assignment1/StartAssignmentAction.msg"
 	cd /home/adam/catkin_ws/src/assignment1 && /home/adam/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentAction.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/include/assignment1 -e /opt/ros/melodic/share/gencpp/cmake/..
 
+/home/adam/catkin_ws/devel/include/assignment1/Tsp.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
+/home/adam/catkin_ws/devel/include/assignment1/Tsp.h: /home/adam/catkin_ws/src/assignment1/srv/Tsp.srv
+/home/adam/catkin_ws/devel/include/assignment1/Tsp.h: /opt/ros/melodic/share/gencpp/msg.h.template
+/home/adam/catkin_ws/devel/include/assignment1/Tsp.h: /opt/ros/melodic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating C++ code from assignment1/Tsp.srv"
+	cd /home/adam/catkin_ws/src/assignment1 && /home/adam/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/adam/catkin_ws/src/assignment1/srv/Tsp.srv -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/include/assignment1 -e /opt/ros/melodic/share/gencpp/cmake/..
+
 /home/adam/catkin_ws/devel/include/assignment1/TspList.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
 /home/adam/catkin_ws/devel/include/assignment1/TspList.h: /home/adam/catkin_ws/src/assignment1/srv/TspList.srv
 /home/adam/catkin_ws/devel/include/assignment1/TspList.h: /opt/ros/melodic/share/gencpp/msg.h.template
 /home/adam/catkin_ws/devel/include/assignment1/TspList.h: /opt/ros/melodic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating C++ code from assignment1/TspList.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating C++ code from assignment1/TspList.srv"
 	cd /home/adam/catkin_ws/src/assignment1 && /home/adam/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/adam/catkin_ws/src/assignment1/srv/TspList.srv -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/include/assignment1 -e /opt/ros/melodic/share/gencpp/cmake/..
+
+/home/adam/catkin_ws/devel/include/assignment1/TurtleSpawn.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
+/home/adam/catkin_ws/devel/include/assignment1/TurtleSpawn.h: /home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv
+/home/adam/catkin_ws/devel/include/assignment1/TurtleSpawn.h: /opt/ros/melodic/share/gencpp/msg.h.template
+/home/adam/catkin_ws/devel/include/assignment1/TurtleSpawn.h: /opt/ros/melodic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating C++ code from assignment1/TurtleSpawn.srv"
+	cd /home/adam/catkin_ws/src/assignment1 && /home/adam/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/include/assignment1 -e /opt/ros/melodic/share/gencpp/cmake/..
 
 assignment1_generate_messages_cpp: assignment1/CMakeFiles/assignment1_generate_messages_cpp
 assignment1_generate_messages_cpp: /home/adam/catkin_ws/devel/include/assignment1/StartAssignmentActionResult.h
@@ -140,7 +156,9 @@ assignment1_generate_messages_cpp: /home/adam/catkin_ws/devel/include/assignment
 assignment1_generate_messages_cpp: /home/adam/catkin_ws/devel/include/assignment1/StartAssignmentGoal.h
 assignment1_generate_messages_cpp: /home/adam/catkin_ws/devel/include/assignment1/StartAssignmentResult.h
 assignment1_generate_messages_cpp: /home/adam/catkin_ws/devel/include/assignment1/StartAssignmentAction.h
+assignment1_generate_messages_cpp: /home/adam/catkin_ws/devel/include/assignment1/Tsp.h
 assignment1_generate_messages_cpp: /home/adam/catkin_ws/devel/include/assignment1/TspList.h
+assignment1_generate_messages_cpp: /home/adam/catkin_ws/devel/include/assignment1/TurtleSpawn.h
 assignment1_generate_messages_cpp: assignment1/CMakeFiles/assignment1_generate_messages_cpp.dir/build.make
 
 .PHONY : assignment1_generate_messages_cpp

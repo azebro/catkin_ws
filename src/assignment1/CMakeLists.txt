@@ -58,6 +58,8 @@ find_package(catkin REQUIRED COMPONENTS
  add_service_files(
    FILES
    TspList.srv
+   TurtleSpawn.srv
+   Tsp.srv
  )
 
 ## Generate actions in the 'action' folder

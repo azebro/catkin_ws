@@ -1,6 +1,11 @@
 (cl:defpackage assignment1-srv
   (:use )
   (:export
+   "TSP"
+   "<TSP-REQUEST>"
+   "TSP-REQUEST"
+   "<TSP-RESPONSE>"
+   "TSP-RESPONSE"
    "TSPLIST"
    "<TSPLIST-REQUEST>"
    "TSPLIST-REQUEST"

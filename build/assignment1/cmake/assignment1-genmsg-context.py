@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentAction.msg;/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionGoal.msg;/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionResult.msg;/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionFeedback.msg;/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg;/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentResult.msg;/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg"
-services_str = "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv"
+services_str = "/home/adam/catkin_ws/src/assignment1/srv/TspList.srv;/home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv;/home/adam/catkin_ws/src/assignment1/srv/Tsp.srv"
 pkg_name = "assignment1"
 dependencies_str = "std_msgs;actionlib_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"
