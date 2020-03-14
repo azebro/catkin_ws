@@ -1,0 +1,8 @@
+prefix=/home/adam/catkin_ws/install
+
+Name: turtle_spawn
+Description: Description of turtle_spawn
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: rospy

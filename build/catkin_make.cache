@@ -1,2 +1,2 @@
-my_package:my_topics_package:openai_ros/openai_ros
+lab03_services:my_package:my_topics_package:openai_ros/openai_ros:turtle_spawn
 -DCATKIN_DEVEL_PREFIX=/home/adam/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/adam/catkin_ws/install -G Unix Makefiles

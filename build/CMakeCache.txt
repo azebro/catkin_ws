@@ -357,6 +357,12 @@ gtest_hide_internal_symbols:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
+//Value Computed by CMake
+lab03_services_BINARY_DIR:STATIC=/home/adam/catkin_ws/build/lab03_services
+
+//Value Computed by CMake
+lab03_services_SOURCE_DIR:STATIC=/home/adam/catkin_ws/src/lab03_services
+
 //Path to a library.
 lib:FILEPATH=/opt/ros/melodic/lib/librostime.so
 
@@ -398,6 +404,12 @@ rostime_DIR:PATH=/opt/ros/melodic/share/rostime/cmake
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/melodic/share/std_msgs/cmake
+
+//Value Computed by CMake
+turtle_spawn_BINARY_DIR:STATIC=/home/adam/catkin_ws/build/turtle_spawn
+
+//Value Computed by CMake
+turtle_spawn_SOURCE_DIR:STATIC=/home/adam/catkin_ws/src/turtle_spawn
 
 
 ########################
@@ -509,7 +521,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=9
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

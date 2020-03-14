@@ -1,0 +1,8 @@
+prefix=/home/adam/catkin_ws/install
+
+Name: lab03_services
+Description: Description of lab03_services
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
