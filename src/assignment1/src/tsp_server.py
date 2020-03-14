@@ -13,8 +13,9 @@ def calculateTSP(request):
     tspList = findPath(turtleList)
     response = TspResponse()
     rospy.loginfo("TSP calculated")
-    response.sequence = str(tspList[:,0])
-    rospy.loginfo("TSP calculation completed")
+    output = pickle.dumps(tspList[:,0], protocol=0)
+    response.sequence = output
+    rospy.loginfo("TSP calculation completed and pickled")
     return response
 
 def findPath(turtles):

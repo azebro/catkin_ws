@@ -15,7 +15,7 @@ client = actionlib.SimpleActionClient("/startAssignment", StartAssignmentAction)
 client.wait_for_server()
 rospy.loginfo("Server found")
 goal = StartAssignmentGoal()
-goal.numberOfTurtles = 10
+goal.numberOfTurtles = 3
 client.send_goal(goal, feedback_cb=feedbackCallback)
 client.wait_for_result()
 result = client.get_result()

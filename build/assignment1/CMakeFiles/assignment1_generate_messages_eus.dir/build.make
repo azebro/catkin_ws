@@ -54,10 +54,17 @@ CMAKE_BINARY_DIR = /home/adam/catkin_ws/build
 include assignment1/CMakeFiles/assignment1_generate_messages_eus.dir/progress.make
 
 assignment1/CMakeFiles/assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentActionResult.l
+assignment1/CMakeFiles/assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleResult.l
+assignment1/CMakeFiles/assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionResult.l
 assignment1/CMakeFiles/assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentFeedback.l
 assignment1/CMakeFiles/assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentActionGoal.l
 assignment1/CMakeFiles/assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentActionFeedback.l
+assignment1/CMakeFiles/assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleGoal.l
+assignment1/CMakeFiles/assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleAction.l
+assignment1/CMakeFiles/assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionFeedback.l
 assignment1/CMakeFiles/assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentGoal.l
+assignment1/CMakeFiles/assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleFeedback.l
+assignment1/CMakeFiles/assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionGoal.l
 assignment1/CMakeFiles/assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentResult.l
 assignment1/CMakeFiles/assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentAction.l
 assignment1/CMakeFiles/assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/srv/Tsp.l
@@ -75,9 +82,23 @@ assignment1/CMakeFiles/assignment1_generate_messages_eus: /home/adam/catkin_ws/d
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from assignment1/StartAssignmentActionResult.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionResult.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg
 
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleResult.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleResult.l: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleResult.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from assignment1/HuntTurtleResult.msg"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleResult.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg
+
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionResult.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionResult.l: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionResult.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionResult.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionResult.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionResult.l: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleResult.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionResult.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from assignment1/HuntTurtleActionResult.msg"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionResult.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg
+
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentFeedback.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentFeedback.l: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from assignment1/StartAssignmentFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from assignment1/StartAssignmentFeedback.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg
 
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentActionGoal.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -85,7 +106,7 @@ assignment1/CMakeFiles/assignment1_generate_messages_eus: /home/adam/catkin_ws/d
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentActionGoal.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentActionGoal.l: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentActionGoal.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from assignment1/StartAssignmentActionGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp code from assignment1/StartAssignmentActionGoal.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionGoal.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg
 
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentActionFeedback.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -94,17 +115,58 @@ assignment1/CMakeFiles/assignment1_generate_messages_eus: /home/adam/catkin_ws/d
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentActionFeedback.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentActionFeedback.l: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentActionFeedback.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from assignment1/StartAssignmentActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating EusLisp code from assignment1/StartAssignmentActionFeedback.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionFeedback.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg
+
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleGoal.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleGoal.l: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleGoal.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating EusLisp code from assignment1/HuntTurtleGoal.msg"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleGoal.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg
+
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleAction.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleAction.l: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleAction.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleAction.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleAction.l: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleGoal.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleAction.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleAction.l: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionGoal.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleAction.l: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionResult.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleAction.l: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleResult.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleAction.l: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionFeedback.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleAction.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleAction.l: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleFeedback.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating EusLisp code from assignment1/HuntTurtleAction.msg"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleAction.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg
+
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionFeedback.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionFeedback.l: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionFeedback.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionFeedback.l: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleFeedback.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionFeedback.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionFeedback.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionFeedback.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating EusLisp code from assignment1/HuntTurtleActionFeedback.msg"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionFeedback.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg
 
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentGoal.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentGoal.l: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp code from assignment1/StartAssignmentGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating EusLisp code from assignment1/StartAssignmentGoal.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg
+
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleFeedback.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleFeedback.l: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleFeedback.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating EusLisp code from assignment1/HuntTurtleFeedback.msg"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleFeedback.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg
+
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionGoal.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionGoal.l: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionGoal.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionGoal.l: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionGoal.l: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleGoal.msg
+/home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionGoal.l: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating EusLisp code from assignment1/HuntTurtleActionGoal.msg"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionGoal.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg
 
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentResult.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentResult.l: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating EusLisp code from assignment1/StartAssignmentResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating EusLisp code from assignment1/StartAssignmentResult.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentResult.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg
 
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentAction.l: /opt/ros/melodic/lib/geneus/gen_eus.py
@@ -118,34 +180,41 @@ assignment1/CMakeFiles/assignment1_generate_messages_eus: /home/adam/catkin_ws/d
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentAction.l: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionFeedback.msg
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentAction.l: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentAction.l: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating EusLisp code from assignment1/StartAssignmentAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating EusLisp code from assignment1/StartAssignmentAction.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentAction.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg
 
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/srv/Tsp.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/srv/Tsp.l: /home/adam/catkin_ws/src/assignment1/srv/Tsp.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating EusLisp code from assignment1/Tsp.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating EusLisp code from assignment1/Tsp.srv"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/src/assignment1/srv/Tsp.srv -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/srv
 
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/srv/TspList.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/srv/TspList.l: /home/adam/catkin_ws/src/assignment1/srv/TspList.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating EusLisp code from assignment1/TspList.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating EusLisp code from assignment1/TspList.srv"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/src/assignment1/srv/TspList.srv -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/srv
 
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/srv/TurtleSpawn.l: /opt/ros/melodic/lib/geneus/gen_eus.py
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/srv/TurtleSpawn.l: /home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating EusLisp code from assignment1/TurtleSpawn.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating EusLisp code from assignment1/TurtleSpawn.srv"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/srv
 
 /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/manifest.l: /opt/ros/melodic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating EusLisp manifest code for assignment1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating EusLisp manifest code for assignment1"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/adam/catkin_ws/devel/share/roseus/ros/assignment1 assignment1 std_msgs actionlib_msgs
 
 assignment1_generate_messages_eus: assignment1/CMakeFiles/assignment1_generate_messages_eus
 assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentActionResult.l
+assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleResult.l
+assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionResult.l
 assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentFeedback.l
 assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentActionGoal.l
 assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentActionFeedback.l
+assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleGoal.l
+assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleAction.l
+assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionFeedback.l
 assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentGoal.l
+assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleFeedback.l
+assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/HuntTurtleActionGoal.l
 assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentResult.l
 assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/msg/StartAssignmentAction.l
 assignment1_generate_messages_eus: /home/adam/catkin_ws/devel/share/roseus/ros/assignment1/srv/Tsp.l

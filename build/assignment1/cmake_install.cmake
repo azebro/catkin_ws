@@ -46,7 +46,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment1/action" TYPE FILE FILES "/home/adam/catkin_ws/src/assignment1/action/StartAssignment.action")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment1/action" TYPE FILE FILES
+    "/home/adam/catkin_ws/src/assignment1/action/StartAssignment.action"
+    "/home/adam/catkin_ws/src/assignment1/action/HuntTurtle.action"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -58,6 +61,18 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg"
     "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentResult.msg"
     "/home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment1/msg" TYPE FILE FILES
+    "/home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleAction.msg"
+    "/home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionGoal.msg"
+    "/home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionResult.msg"
+    "/home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionFeedback.msg"
+    "/home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleGoal.msg"
+    "/home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleResult.msg"
+    "/home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleFeedback.msg"
     )
 endif()
 

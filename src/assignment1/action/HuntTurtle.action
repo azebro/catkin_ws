@@ -1,0 +1,18 @@
+#goal definition
+float32 hunterX
+float32 hunterY
+float32 hunterTheta
+string hunterName
+float32 targetX
+float32 targetY
+float32 targetTheta
+string targetName
+int32 targetId
+---
+#result definition
+string status
+float32 time
+---
+#feedback
+string progressBar
+float32 progress
