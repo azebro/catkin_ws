@@ -24,17 +24,32 @@ struct TurtleSpawnResponse_
   typedef TurtleSpawnResponse_<ContainerAllocator> Type;
 
   TurtleSpawnResponse_()
-    : turtles()  {
+    : x(0.0)
+    , y(0.0)
+    , theta(0.0)
+    , name()  {
     }
   TurtleSpawnResponse_(const ContainerAllocator& _alloc)
-    : turtles(_alloc)  {
+    : x(0.0)
+    , y(0.0)
+    , theta(0.0)
+    , name(_alloc)  {
   (void)_alloc;
     }
 
 
 
-   typedef std::vector<int32_t, typename ContainerAllocator::template rebind<int32_t>::other >  _turtles_type;
-  _turtles_type turtles;
+   typedef float _x_type;
+  _x_type x;
+
+   typedef float _y_type;
+  _y_type y;
+
+   typedef float _theta_type;
+  _theta_type theta;
+
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _name_type;
+  _name_type name;
 
 
 
@@ -114,12 +129,12 @@ struct MD5Sum< ::assignment1::TurtleSpawnResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "b5cfa4f7983516bb1fa09ba771f01902";
+    return "57f001c49ab7b11d699f8606c1f4f7ff";
   }
 
   static const char* value(const ::assignment1::TurtleSpawnResponse_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xb5cfa4f7983516bbULL;
-  static const uint64_t static_value2 = 0x1fa09ba771f01902ULL;
+  static const uint64_t static_value1 = 0x57f001c49ab7b11dULL;
+  static const uint64_t static_value2 = 0x699f8606c1f4f7ffULL;
 };
 
 template<class ContainerAllocator>
@@ -138,7 +153,10 @@ struct Definition< ::assignment1::TurtleSpawnResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "int32[] turtles\n"
+    return "float32 x\n"
+"float32 y\n"
+"float32 theta\n"
+"string name\n"
 "\n"
 ;
   }
@@ -158,7 +176,10 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.turtles);
+      stream.next(m.x);
+      stream.next(m.y);
+      stream.next(m.theta);
+      stream.next(m.name);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -177,12 +198,14 @@ struct Printer< ::assignment1::TurtleSpawnResponse_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::assignment1::TurtleSpawnResponse_<ContainerAllocator>& v)
   {
-    s << indent << "turtles[]" << std::endl;
-    for (size_t i = 0; i < v.turtles.size(); ++i)
-    {
-      s << indent << "  turtles[" << i << "]: ";
-      Printer<int32_t>::stream(s, indent + "  ", v.turtles[i]);
-    }
+    s << indent << "x: ";
+    Printer<float>::stream(s, indent + "  ", v.x);
+    s << indent << "y: ";
+    Printer<float>::stream(s, indent + "  ", v.y);
+    s << indent << "theta: ";
+    Printer<float>::stream(s, indent + "  ", v.theta);
+    s << indent << "name: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.name);
   }
 };
 

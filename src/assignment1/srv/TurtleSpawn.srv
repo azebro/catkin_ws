@@ -1,3 +1,10 @@
-int32 turtleCount
+string name
+float32 x
+float32 y
+float32 theta
+bool random
 ---
-int32[] turtles
+float32 x
+float32 y
+float32 theta
+string name

@@ -86,7 +86,7 @@ class HuntTurtleAction {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'e9cc16c0d093f48806a2535c48000790';
+    return 'a801570e7b09aabd9ce0ae4d095e3693';
   }
 
   static messageDefinition() {
@@ -148,6 +148,7 @@ class HuntTurtleAction {
     float32 targetTheta
     string targetName
     int32 targetId
+    bool kill
     
     ================================================================================
     MSG: assignment1/HuntTurtleActionResult

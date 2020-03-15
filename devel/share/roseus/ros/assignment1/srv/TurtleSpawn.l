@@ -20,82 +20,151 @@
 
 (defclass assignment1::TurtleSpawnRequest
   :super ros::object
-  :slots (_turtleCount ))
+  :slots (_name _x _y _theta _random ))
 
 (defmethod assignment1::TurtleSpawnRequest
   (:init
    (&key
-    ((:turtleCount __turtleCount) 0)
+    ((:name __name) "")
+    ((:x __x) 0.0)
+    ((:y __y) 0.0)
+    ((:theta __theta) 0.0)
+    ((:random __random) nil)
     )
    (send-super :init)
-   (setq _turtleCount (round __turtleCount))
+   (setq _name (string __name))
+   (setq _x (float __x))
+   (setq _y (float __y))
+   (setq _theta (float __theta))
+   (setq _random __random)
    self)
-  (:turtleCount
-   (&optional __turtleCount)
-   (if __turtleCount (setq _turtleCount __turtleCount)) _turtleCount)
+  (:name
+   (&optional __name)
+   (if __name (setq _name __name)) _name)
+  (:x
+   (&optional __x)
+   (if __x (setq _x __x)) _x)
+  (:y
+   (&optional __y)
+   (if __y (setq _y __y)) _y)
+  (:theta
+   (&optional __theta)
+   (if __theta (setq _theta __theta)) _theta)
+  (:random
+   (&optional __random)
+   (if __random (setq _random __random)) _random)
   (:serialization-length
    ()
    (+
-    ;; int32 _turtleCount
+    ;; string _name
+    4 (length _name)
+    ;; float32 _x
     4
+    ;; float32 _y
+    4
+    ;; float32 _theta
+    4
+    ;; bool _random
+    1
     ))
   (:serialize
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
-     ;; int32 _turtleCount
-       (write-long _turtleCount s)
+     ;; string _name
+       (write-long (length _name) s) (princ _name s)
+     ;; float32 _x
+       (sys::poke _x (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _y
+       (sys::poke _y (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _theta
+       (sys::poke _theta (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; bool _random
+       (if _random (write-byte -1 s) (write-byte 0 s))
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
-   ;; int32 _turtleCount
-     (setq _turtleCount (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; string _name
+     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _name (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+   ;; float32 _x
+     (setq _x (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _y
+     (setq _y (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _theta
+     (setq _theta (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; bool _random
+     (setq _random (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
    ;;
    self)
   )
 
 (defclass assignment1::TurtleSpawnResponse
   :super ros::object
-  :slots (_turtles ))
+  :slots (_x _y _theta _name ))
 
 (defmethod assignment1::TurtleSpawnResponse
   (:init
    (&key
-    ((:turtles __turtles) (make-array 0 :initial-element 0 :element-type :integer))
+    ((:x __x) 0.0)
+    ((:y __y) 0.0)
+    ((:theta __theta) 0.0)
+    ((:name __name) "")
     )
    (send-super :init)
-   (setq _turtles __turtles)
+   (setq _x (float __x))
+   (setq _y (float __y))
+   (setq _theta (float __theta))
+   (setq _name (string __name))
    self)
-  (:turtles
-   (&optional __turtles)
-   (if __turtles (setq _turtles __turtles)) _turtles)
+  (:x
+   (&optional __x)
+   (if __x (setq _x __x)) _x)
+  (:y
+   (&optional __y)
+   (if __y (setq _y __y)) _y)
+  (:theta
+   (&optional __theta)
+   (if __theta (setq _theta __theta)) _theta)
+  (:name
+   (&optional __name)
+   (if __name (setq _name __name)) _name)
   (:serialization-length
    ()
    (+
-    ;; int32[] _turtles
-    (* 4    (length _turtles)) 4
+    ;; float32 _x
+    4
+    ;; float32 _y
+    4
+    ;; float32 _theta
+    4
+    ;; string _name
+    4 (length _name)
     ))
   (:serialize
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
-     ;; int32[] _turtles
-     (write-long (length _turtles) s)
-     (dotimes (i (length _turtles))
-       (write-long (elt _turtles i) s)
-       )
+     ;; float32 _x
+       (sys::poke _x (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _y
+       (sys::poke _y (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _theta
+       (sys::poke _theta (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; string _name
+       (write-long (length _name) s) (princ _name s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
-   ;; int32[] _turtles
-   (let (n)
-     (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4)
-     (setq _turtles (instantiate integer-vector n))
-     (dotimes (i n)
-     (setf (elt _turtles i) (sys::peek buf ptr- :integer)) (incf ptr- 4)
-     ))
+   ;; float32 _x
+     (setq _x (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _y
+     (setq _y (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _theta
+     (setq _theta (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; string _name
+     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _name (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
    ;;
    self)
   )
@@ -104,7 +173,7 @@
   :super ros::object
   :slots ())
 
-(setf (get assignment1::TurtleSpawn :md5sum-) "fe402387a08743623c9801322d19262d")
+(setf (get assignment1::TurtleSpawn :md5sum-) "46c7c113caf86168394082f3d95807e0")
 (setf (get assignment1::TurtleSpawn :datatype-) "assignment1/TurtleSpawn")
 (setf (get assignment1::TurtleSpawn :request) assignment1::TurtleSpawnRequest)
 (setf (get assignment1::TurtleSpawn :response) assignment1::TurtleSpawnResponse)
@@ -112,26 +181,40 @@
 (defmethod assignment1::TurtleSpawnRequest
   (:response () (instance assignment1::TurtleSpawnResponse :init)))
 
-(setf (get assignment1::TurtleSpawnRequest :md5sum-) "fe402387a08743623c9801322d19262d")
+(setf (get assignment1::TurtleSpawnRequest :md5sum-) "46c7c113caf86168394082f3d95807e0")
 (setf (get assignment1::TurtleSpawnRequest :datatype-) "assignment1/TurtleSpawnRequest")
 (setf (get assignment1::TurtleSpawnRequest :definition-)
-      "int32 turtleCount
+      "string name
+float32 x
+float32 y
+float32 theta
+bool random
 ---
-int32[] turtles
+float32 x
+float32 y
+float32 theta
+string name
 
 ")
 
-(setf (get assignment1::TurtleSpawnResponse :md5sum-) "fe402387a08743623c9801322d19262d")
+(setf (get assignment1::TurtleSpawnResponse :md5sum-) "46c7c113caf86168394082f3d95807e0")
 (setf (get assignment1::TurtleSpawnResponse :datatype-) "assignment1/TurtleSpawnResponse")
 (setf (get assignment1::TurtleSpawnResponse :definition-)
-      "int32 turtleCount
+      "string name
+float32 x
+float32 y
+float32 theta
+bool random
 ---
-int32[] turtles
+float32 x
+float32 y
+float32 theta
+string name
 
 ")
 
 
 
-(provide :assignment1/TurtleSpawn "fe402387a08743623c9801322d19262d")
+(provide :assignment1/TurtleSpawn "46c7c113caf86168394082f3d95807e0")
 
 

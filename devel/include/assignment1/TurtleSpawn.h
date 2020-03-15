@@ -40,7 +40,7 @@ template<>
 struct MD5Sum< ::assignment1::TurtleSpawn > {
   static const char* value()
   {
-    return "fe402387a08743623c9801322d19262d";
+    return "46c7c113caf86168394082f3d95807e0";
   }
 
   static const char* value(const ::assignment1::TurtleSpawn&) { return value(); }

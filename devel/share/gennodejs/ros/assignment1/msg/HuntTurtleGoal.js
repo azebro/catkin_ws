@@ -27,6 +27,7 @@ class HuntTurtleGoal {
       this.targetTheta = null;
       this.targetName = null;
       this.targetId = null;
+      this.kill = null;
     }
     else {
       if (initObj.hasOwnProperty('hunterX')) {
@@ -83,6 +84,12 @@ class HuntTurtleGoal {
       else {
         this.targetId = 0;
       }
+      if (initObj.hasOwnProperty('kill')) {
+        this.kill = initObj.kill
+      }
+      else {
+        this.kill = false;
+      }
     }
   }
 
@@ -106,6 +113,8 @@ class HuntTurtleGoal {
     bufferOffset = _serializer.string(obj.targetName, buffer, bufferOffset);
     // Serialize message field [targetId]
     bufferOffset = _serializer.int32(obj.targetId, buffer, bufferOffset);
+    // Serialize message field [kill]
+    bufferOffset = _serializer.bool(obj.kill, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -131,6 +140,8 @@ class HuntTurtleGoal {
     data.targetName = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [targetId]
     data.targetId = _deserializer.int32(buffer, bufferOffset);
+    // Deserialize message field [kill]
+    data.kill = _deserializer.bool(buffer, bufferOffset);
     return data;
   }
 
@@ -138,7 +149,7 @@ class HuntTurtleGoal {
     let length = 0;
     length += object.hunterName.length;
     length += object.targetName.length;
-    return length + 36;
+    return length + 37;
   }
 
   static datatype() {
@@ -148,7 +159,7 @@ class HuntTurtleGoal {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '0cb907047e6d468ef1ec1e0d0f7d469d';
+    return '6b95b9c5d2dc338d096d1572fe3309d0';
   }
 
   static messageDefinition() {
@@ -165,6 +176,7 @@ class HuntTurtleGoal {
     float32 targetTheta
     string targetName
     int32 targetId
+    bool kill
     
     `;
   }
@@ -236,6 +248,13 @@ class HuntTurtleGoal {
     }
     else {
       resolved.targetId = 0
+    }
+
+    if (msg.kill !== undefined) {
+      resolved.kill = msg.kill;
+    }
+    else {
+      resolved.kill = false
     }
 
     return resolved;

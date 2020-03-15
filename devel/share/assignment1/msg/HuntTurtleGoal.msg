@@ -9,3 +9,4 @@ float32 targetY
 float32 targetTheta
 string targetName
 int32 targetId
+bool kill

@@ -127,12 +127,12 @@ struct MD5Sum< ::assignment1::HuntTurtleActionGoal_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "5975b12974d49ebd1352bfc5e358391b";
+    return "3558c42c643fbfc139de069d81849149";
   }
 
   static const char* value(const ::assignment1::HuntTurtleActionGoal_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x5975b12974d49ebdULL;
-  static const uint64_t static_value2 = 0x1352bfc5e358391bULL;
+  static const uint64_t static_value1 = 0x3558c42c643fbfc1ULL;
+  static const uint64_t static_value2 = 0x39de069d81849149ULL;
 };
 
 template<class ContainerAllocator>
@@ -199,6 +199,7 @@ struct Definition< ::assignment1::HuntTurtleActionGoal_<ContainerAllocator> >
 "float32 targetTheta\n"
 "string targetName\n"
 "int32 targetId\n"
+"bool kill\n"
 ;
   }
 

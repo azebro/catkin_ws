@@ -17,4 +17,6 @@
           TARGETNAME
           TARGETID-VAL
           TARGETID
+          KILL-VAL
+          KILL
 ))

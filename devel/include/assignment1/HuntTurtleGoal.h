@@ -32,7 +32,8 @@ struct HuntTurtleGoal_
     , targetY(0.0)
     , targetTheta(0.0)
     , targetName()
-    , targetId(0)  {
+    , targetId(0)
+    , kill(false)  {
     }
   HuntTurtleGoal_(const ContainerAllocator& _alloc)
     : hunterX(0.0)
@@ -43,7 +44,8 @@ struct HuntTurtleGoal_
     , targetY(0.0)
     , targetTheta(0.0)
     , targetName(_alloc)
-    , targetId(0)  {
+    , targetId(0)
+    , kill(false)  {
   (void)_alloc;
     }
 
@@ -75,6 +77,9 @@ struct HuntTurtleGoal_
 
    typedef int32_t _targetId_type;
   _targetId_type targetId;
+
+   typedef uint8_t _kill_type;
+  _kill_type kill;
 
 
 
@@ -154,12 +159,12 @@ struct MD5Sum< ::assignment1::HuntTurtleGoal_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "0cb907047e6d468ef1ec1e0d0f7d469d";
+    return "6b95b9c5d2dc338d096d1572fe3309d0";
   }
 
   static const char* value(const ::assignment1::HuntTurtleGoal_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x0cb907047e6d468eULL;
-  static const uint64_t static_value2 = 0xf1ec1e0d0f7d469dULL;
+  static const uint64_t static_value1 = 0x6b95b9c5d2dc338dULL;
+  static const uint64_t static_value2 = 0x096d1572fe3309d0ULL;
 };
 
 template<class ContainerAllocator>
@@ -189,6 +194,7 @@ struct Definition< ::assignment1::HuntTurtleGoal_<ContainerAllocator> >
 "float32 targetTheta\n"
 "string targetName\n"
 "int32 targetId\n"
+"bool kill\n"
 ;
   }
 
@@ -216,6 +222,7 @@ namespace serialization
       stream.next(m.targetTheta);
       stream.next(m.targetName);
       stream.next(m.targetId);
+      stream.next(m.kill);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -252,6 +259,8 @@ struct Printer< ::assignment1::HuntTurtleGoal_<ContainerAllocator> >
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.targetName);
     s << indent << "targetId: ";
     Printer<int32_t>::stream(s, indent + "  ", v.targetId);
+    s << indent << "kill: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.kill);
   }
 };
 
