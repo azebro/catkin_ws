@@ -60,10 +60,10 @@ def execute(goal):
         huntGoal.targetX = targetAttributes[0]
         huntGoal.targetY = targetAttributes[1]
         huntGoal.targetTheta = targetAttributes[2]
-        huntGoal.targetName = "turtle" + str(targetAttributes[3])
+        huntGoal.targetName = "turtle" + str(int(targetAttributes[3]))
         huntGoal.targetId = targetAttributes[3]
         huntGoal.kill = True
-        rospy.loginfo("Processing turtle: " + "turtle" + str(targetAttributes[3]))
+        rospy.loginfo("Processing turtle: " + "turtle" + str(int(targetAttributes[3])))
         huntClient.send_goal(huntGoal, feedback_cb=huntFeedback)
         huntClient.wait_for_result()
         res = huntClient.get_result()
@@ -81,7 +81,7 @@ def execute(goal):
     huntGoal.targetName = "turtle1" 
     huntGoal.targetId = 1
     huntGoal.kill = False
-    rospy.loginfo("Processing turtle: " + "turtle" + str(targetAttributes[3]))
+    rospy.loginfo("Processing turtle: " + "turtle" + str(int(targetAttributes[3])))
     huntClient.send_goal(huntGoal, feedback_cb=huntFeedback)
     huntClient.wait_for_result()
     res = huntClient.get_result()
@@ -125,8 +125,8 @@ def spawnTurtles(numberOfTurtles):
         x = random.randint(1,10)
         y = random.randint(5,10)
         name = "turtle" + str(i)
-        spawnTurtle(x, y, name)
-        turtlesList.append([x, y, 0, i])
+        response = spawnTurtle.call(name, 0, 0, 0, True)
+        turtlesList.append([response.x, response.y, response.theta, i])
     
     return np.array(turtlesList)
 
