@@ -12,7 +12,7 @@ from assignment1.srv import  TurtleSpawn, TurtleSpawnResponse
 from assignment1.msg import ConveyorGoal, ConveyorFeedback, ConveyorResult, ConveyorAction
 
 work = True
-frequency = 10
+frequency = 20
 wait = 5
 spawnCounter = frequency * wait
 turtlesOnBelt = {}
@@ -27,7 +27,7 @@ picketTurtleState = 0
 
 
 def execute(goal):
-    global spawnCounter, turtlesOnBelt, work, currentTurtle, currentTurtlePose, turtleSelected, pickerTurtle, pickerTurtlePose, ts
+    global spawnCounter, turtlesOnBelt, work, currentTurtle, currentTurtlePose, turtleSelected, pickerTurtle, pickerTurtlePose
     turleBeltCouner = 1
     pickerTurtlePose.x = 5.5
     pickerTurtlePose.y = 3
@@ -47,21 +47,17 @@ def execute(goal):
             spawnCounter = 0
         for beltTurtle in turtlesOnBelt.values():
             moveTurtle(beltTurtle)
-        if not turtleSelected:
+        if not turtleSelected and picketTurtleState == 0 and not queue.empty():
             currentTurtle = queue.get()
             rospy.Subscriber("/" + currentTurtle + "/pose", Pose, currentTurtlePosition)
             turtleSelected = True
 
         engagePicker()
 
-
-
         spawnCounter += 1
         
         if turleBeltCouner > goal.maxSpawns:
             work = False
-
-        
 
         rate.sleep()
         
@@ -87,32 +83,27 @@ def engagePicker():
         x = pickerTurtlePose.x
         y = pickerTurtlePose.y
 
-        if  (x - 0.5 < currentTurtlePose.x < x + 0.5) and (y - 0.5 < currentTurtlePose.y < y + 0.5):
+        if  (x - 0.3 < currentTurtlePose.x < x + 0.3) and (y - 0.3 < currentTurtlePose.y < y + 0.3):
             picketTurtleState = 2
 
         if picketTurtleState == 2:
             removeTurtle(currentTurtle)
             rospy.loginfo("killed: " + currentTurtle)
             del turtlesOnBelt[currentTurtle]
+            rospy.loginfo("coordinates: " + str(pickerTurtlePose.x) + str(pickerTurtlePose.y)+ str(pickerTurtlePose.theta))
+            movePicker(0)
             turtleSelected = False
 
         if picketTurtleState == 1:
             rospy.loginfo("move picker")
-            motion = Twist()
-            motion.linear.x = 1
-            motion.angular.z = 0
-            motion.angular.y = 0
-            pickerTurtle.publish(motion)
+            movePicker(1)
     else:
-        if pickerTurtlePose.y < 3:
+        if pickerTurtlePose.y < 2.9:
             rospy.loginfo("move back")
-            motion = Twist()
-            motion.linear.x = -1
-            motion.angular.z = 0
-            motion.angular.y = 0
-            pickerTurtle.publish(motion)
-        if pickerTurtlePose.y == 3:
+            movePicker(-1)
+        if  2.9 <= pickerTurtlePose.y < 3.0:
             picketTurtleState = 0
+            movePicker(0)
     
 def pickerTurtlePosition(data):
     global pickerTurtlePose
@@ -126,7 +117,10 @@ def currentTurtlePosition(data):
     currentTurtlePose.y = data.y
     currentTurtlePose.theta = data.theta
 
-    
+def movePicker(x):
+    motion = Twist()
+    motion.linear.x = x
+    pickerTurtle.publish(motion)
 
         
 rospy.init_node("conveyor")

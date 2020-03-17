@@ -12,7 +12,7 @@ client = actionlib.SimpleActionClient("/startConveyor", ConveyorAction)
 client.wait_for_server()
 rospy.loginfo("Server found")
 goal = ConveyorGoal()
-goal.maxSpawns = 10
+goal.maxSpawns = 20
 client.send_goal(goal, feedback_cb=feedbackCallback)
 client.wait_for_result()
 client.wait_for_result()
