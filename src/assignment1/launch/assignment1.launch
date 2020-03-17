@@ -1,0 +1,11 @@
+<launch>  
+    <!-- Assignment 1 launch file -->
+    <node pkg="assignment1" type="turtleSpawn_server.py" name="TurtleSpawn_server" output ="screen"/> 
+    <node pkg="assignment1" type="turtleHunter_server.py" name="hunter" output ="screen"/> 
+    <node pkg="assignment1" type="tsp_server.py" name="TSP_server" output ="screen"/>
+    <node pkg="assignment1" type="conveyor_server.py" name="conveyor" output ="screen"/>
+    <node pkg="assignment1" type="assignment1_server.py" name="assignment" output ="screen"/>
+    <node pkg="turtlesim"  type="turtlesim_node" name="turtlesim_node" output ="screen"/>
+    <node pkg="assignment1" type="assignment1_client.py" name="assignment1_client" output ="screen"/>
+
+</launch>
