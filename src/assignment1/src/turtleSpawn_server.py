@@ -26,5 +26,5 @@ def spawn(request):
 
 spawnService = rospy.ServiceProxy("/spawn", Spawn)
 rospy.init_node("TurtleSpawn_server")
-sceneService = rospy.Service("/turtle_spawn", TurtleSpawn, spawn )
+sceneService = rospy.Service("/turtle_spawn", TurtleSpawn, spawn)
 rospy.spin()

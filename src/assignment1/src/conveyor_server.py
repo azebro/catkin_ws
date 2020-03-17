@@ -36,6 +36,10 @@ def execute(goal):
     response = spawnTurtle.call("picker", 5.5, 3, -1.5708, False)
     rospy.Subscriber("/" + response.name + "/pose", Pose, pickerTurtlePosition)
     pickerTurtle = rospy.Publisher("/picker/cmd_vel", Twist, queue_size = 10)
+    if goal.maxSpawns == -1:
+        maxSpawns = 1000000
+    else:
+        maxSpawns = goal.maxSpawns
     while work:
         if spawnBelt():
             name = "belt" + str(turleBeltCouner)
@@ -56,10 +60,11 @@ def execute(goal):
 
         spawnCounter += 1
         
-        if turleBeltCouner > goal.maxSpawns:
+        if turleBeltCouner > maxSpawns:
             work = False
 
         rate.sleep()
+    actionServer.set_succeeded(result=ConveyorResult(), text="OK")
         
 
 def spawnBelt():

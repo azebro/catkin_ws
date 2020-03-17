@@ -12,7 +12,7 @@ from geometry_msgs.msg import Twist
 from std_srvs.srv import *
 from turtlesim.msg import *
 from turtlesim.srv import *
-from assignment1.msg import StartAssignmentResult, StartAssignmentFeedback, StartAssignmentAction, HuntTurtleGoal, HuntTurtleFeedback, HuntTurtleResult, HuntTurtleAction
+from assignment1.msg import StartAssignmentResult, StartAssignmentFeedback, StartAssignmentAction, HuntTurtleGoal, HuntTurtleFeedback, HuntTurtleResult, HuntTurtleAction, ConveyorGoal, ConveyorFeedback, ConveyorResult, ConveyorAction
 from assignment1.srv import Tsp, TspResponse, TurtleSpawn, TurtleSpawnResponse
 
 mainTurtle = Pose()
@@ -21,11 +21,15 @@ def execute(goal):
     global turtleTargetx, turtleTargety
     rospy.loginfo("Goal started" )
     #clear()
+
+
     
-    rospy.loginfo("Get main turtle, assuming turtle1")
+
+
     rospy.loginfo("Creating number of requested turtles: " + str(goal.numberOfTurtles))
     
     result = spawnTurtles(goal.numberOfTurtles)
+    
     rospy.loginfo("Targets created" + str(result))
     rospy.loginfo(result.shape)
     tspList = np.concatenate((np.array([mainTurtle.x, mainTurtle.y, mainTurtle.theta, 1]).reshape(1,4), result), axis=0)
@@ -38,6 +42,19 @@ def execute(goal):
     rospy.loginfo("Route received: " + str(route))
     #for i in range(2, goal.numberOfTurtles+2):
     #rospy.loginfo(result[int(route[1]),0])
+
+
+    conveyorClient = actionlib.SimpleActionClient("/startConveyor", ConveyorAction)
+    conveyorClient.wait_for_server()
+    rospy.loginfo("Server found")
+    conveyorGoal = ConveyorGoal()
+    conveyorGoal.maxSpawns = 20
+    conveyorClient.send_goal(conveyorGoal, feedback_cb=conveyorDone)
+    conveyorClient.stop_tracking_goal()
+    rospy.loginfo("Get main turtle, assuming turtle1")
+
+
+
     huntClient = actionlib.SimpleActionClient("/huntTurtle", HuntTurtleAction)
     huntClient.wait_for_server()
     initialX = mainTurtle.x
@@ -89,11 +106,12 @@ def execute(goal):
    
     output = StartAssignmentResult()
      
-    output.turtlesCollected = res.status
+    output.turtlesCollected = "OK"
     #rospy.loginfo(outputList)
     actionServer.set_succeeded(output, "OK")
 
-
+def conveyorDone(a):
+    pass
 
     
 def huntFeedback(feedback):
@@ -127,7 +145,7 @@ def spawnTurtles(numberOfTurtles):
         name = "turtle" + str(i)
         response = spawnTurtle.call(name, 0, 0, 0, True)
         turtlesList.append([response.x, response.y, response.theta, i])
-    
+    spawnTurtle.close()
     return np.array(turtlesList)
 
 def spawnTurtle(x, y, name, theta = 0):
@@ -154,6 +172,7 @@ mainTurtle = Pose()
 actionName = "startAssignment"
 
 spawnTurtle = rospy.ServiceProxy("/turtle_spawn", TurtleSpawn)
+
 calculateRoute = rospy.ServiceProxy("/calculate_tsp", Tsp)
 pub = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size = 10)
 rospy.Subscriber("/turtle1/pose", Pose, mainPose)
