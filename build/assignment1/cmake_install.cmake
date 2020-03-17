@@ -49,6 +49,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment1/action" TYPE FILE FILES
     "/home/adam/catkin_ws/src/assignment1/action/StartAssignment.action"
     "/home/adam/catkin_ws/src/assignment1/action/HuntTurtle.action"
+    "/home/adam/catkin_ws/src/assignment1/action/Conveyor.action"
     )
 endif()
 
@@ -73,6 +74,18 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleGoal.msg"
     "/home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleResult.msg"
     "/home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleFeedback.msg"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/assignment1/msg" TYPE FILE FILES
+    "/home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorAction.msg"
+    "/home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionGoal.msg"
+    "/home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionResult.msg"
+    "/home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionFeedback.msg"
+    "/home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorGoal.msg"
+    "/home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorResult.msg"
+    "/home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorFeedback.msg"
     )
 endif()
 

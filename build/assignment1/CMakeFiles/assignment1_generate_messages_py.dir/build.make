@@ -56,17 +56,24 @@ include assignment1/CMakeFiles/assignment1_generate_messages_py.dir/progress.mak
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionResult.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleResult.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionResult.py
+assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionGoal.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentFeedback.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionGoal.py
+assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionResult.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionFeedback.py
+assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorAction.py
+assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionFeedback.py
+assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorFeedback.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleGoal.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleAction.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionFeedback.py
+assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorResult.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentGoal.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleFeedback.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionGoal.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentResult.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentAction.py
+assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorGoal.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_Tsp.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TspList.py
 assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TurtleSpawn.py
@@ -97,9 +104,17 @@ assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/de
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG assignment1/HuntTurtleActionResult"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionResult.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
 
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionGoal.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionGoal.py: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionGoal.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionGoal.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionGoal.py: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorGoal.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionGoal.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG assignment1/ConveyorActionGoal"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionGoal.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
+
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentFeedback.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentFeedback.py: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG assignment1/StartAssignmentFeedback"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG assignment1/StartAssignmentFeedback"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
 
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionGoal.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -107,8 +122,17 @@ assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/de
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionGoal.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionGoal.py: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionGoal.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG assignment1/StartAssignmentActionGoal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python from MSG assignment1/StartAssignmentActionGoal"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionGoal.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
+
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionResult.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionResult.py: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionResult.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionResult.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionResult.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionResult.py: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorResult.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionResult.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python from MSG assignment1/ConveyorActionResult"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionResult.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
 
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionFeedback.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionFeedback.py: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionFeedback.msg
@@ -116,12 +140,40 @@ assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/de
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionFeedback.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionFeedback.py: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionFeedback.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python from MSG assignment1/StartAssignmentActionFeedback"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Python from MSG assignment1/StartAssignmentActionFeedback"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionFeedback.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
+
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorAction.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorAction.py: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorAction.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorAction.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorAction.py: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorFeedback.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorAction.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorAction.py: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionFeedback.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorAction.py: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorResult.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorAction.py: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionResult.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorAction.py: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionGoal.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorAction.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorAction.py: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorGoal.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Python from MSG assignment1/ConveyorAction"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorAction.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
+
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionFeedback.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionFeedback.py: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionFeedback.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionFeedback.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionFeedback.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionFeedback.py: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorFeedback.msg
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionFeedback.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python from MSG assignment1/ConveyorActionFeedback"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionFeedback.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
+
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorFeedback.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorFeedback.py: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorFeedback.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Python from MSG assignment1/ConveyorFeedback"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorFeedback.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
 
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleGoal.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleGoal.py: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python from MSG assignment1/HuntTurtleGoal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Python from MSG assignment1/HuntTurtleGoal"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleGoal.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
 
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleAction.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -135,7 +187,7 @@ assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/de
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleAction.py: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionFeedback.msg
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleAction.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleAction.py: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Python from MSG assignment1/HuntTurtleAction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Python from MSG assignment1/HuntTurtleAction"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleAction.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
 
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionFeedback.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -144,17 +196,22 @@ assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/de
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionFeedback.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionFeedback.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionFeedback.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Python from MSG assignment1/HuntTurtleActionFeedback"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating Python from MSG assignment1/HuntTurtleActionFeedback"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionFeedback.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
+
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorResult.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorResult.py: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorResult.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating Python from MSG assignment1/ConveyorResult"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorResult.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
 
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentGoal.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentGoal.py: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python from MSG assignment1/StartAssignmentGoal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating Python from MSG assignment1/StartAssignmentGoal"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
 
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleFeedback.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleFeedback.py: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Python from MSG assignment1/HuntTurtleFeedback"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating Python from MSG assignment1/HuntTurtleFeedback"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleFeedback.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
 
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionGoal.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -162,12 +219,12 @@ assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/de
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionGoal.py: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionGoal.py: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleGoal.msg
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionGoal.py: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Python from MSG assignment1/HuntTurtleActionGoal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating Python from MSG assignment1/HuntTurtleActionGoal"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionGoal.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
 
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentResult.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentResult.py: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Python from MSG assignment1/StartAssignmentResult"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating Python from MSG assignment1/StartAssignmentResult"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentResult.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
 
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentAction.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -181,81 +238,107 @@ assignment1/CMakeFiles/assignment1_generate_messages_py: /home/adam/catkin_ws/de
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentAction.py: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionFeedback.msg
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentAction.py: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentAction.py: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating Python from MSG assignment1/StartAssignmentAction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating Python from MSG assignment1/StartAssignmentAction"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentAction.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
+
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorGoal.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorGoal.py: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorGoal.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating Python from MSG assignment1/ConveyorGoal"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorGoal.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg
 
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_Tsp.py: /opt/ros/melodic/lib/genpy/gensrv_py.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_Tsp.py: /home/adam/catkin_ws/src/assignment1/srv/Tsp.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating Python code from SRV assignment1/Tsp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating Python code from SRV assignment1/Tsp"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/adam/catkin_ws/src/assignment1/srv/Tsp.srv -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv
 
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TspList.py: /opt/ros/melodic/lib/genpy/gensrv_py.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TspList.py: /home/adam/catkin_ws/src/assignment1/srv/TspList.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating Python code from SRV assignment1/TspList"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating Python code from SRV assignment1/TspList"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/adam/catkin_ws/src/assignment1/srv/TspList.srv -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv
 
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TurtleSpawn.py: /opt/ros/melodic/lib/genpy/gensrv_py.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TurtleSpawn.py: /home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating Python code from SRV assignment1/TurtleSpawn"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating Python code from SRV assignment1/TurtleSpawn"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv
 
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionResult.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleResult.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionResult.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionGoal.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentFeedback.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionGoal.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionResult.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionFeedback.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorAction.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionFeedback.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorFeedback.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleGoal.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleAction.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionFeedback.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorResult.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentGoal.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleFeedback.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionGoal.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentResult.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentAction.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorGoal.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_Tsp.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TspList.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TurtleSpawn.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating Python msg __init__.py for assignment1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating Python msg __init__.py for assignment1"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg --initpy
 
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionResult.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleResult.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionResult.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionGoal.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentFeedback.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionGoal.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionResult.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionFeedback.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorAction.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionFeedback.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorFeedback.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleGoal.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleAction.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionFeedback.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorResult.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentGoal.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleFeedback.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionGoal.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentResult.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentAction.py
+/home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorGoal.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_Tsp.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TspList.py
 /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/__init__.py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TurtleSpawn.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating Python srv __init__.py for assignment1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating Python srv __init__.py for assignment1"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv --initpy
 
 assignment1_generate_messages_py: assignment1/CMakeFiles/assignment1_generate_messages_py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionResult.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleResult.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionResult.py
+assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionGoal.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentFeedback.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionGoal.py
+assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionResult.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentActionFeedback.py
+assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorAction.py
+assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorActionFeedback.py
+assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorFeedback.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleGoal.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleAction.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionFeedback.py
+assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorResult.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentGoal.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleFeedback.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_HuntTurtleActionGoal.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentResult.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_StartAssignmentAction.py
+assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/msg/_ConveyorGoal.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_Tsp.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TspList.py
 assignment1_generate_messages_py: /home/adam/catkin_ws/devel/lib/python2.7/dist-packages/assignment1/srv/_TurtleSpawn.py

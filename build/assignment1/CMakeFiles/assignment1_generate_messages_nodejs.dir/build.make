@@ -56,17 +56,24 @@ include assignment1/CMakeFiles/assignment1_generate_messages_nodejs.dir/progress
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentActionResult.js
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleResult.js
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleActionResult.js
+assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionGoal.js
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentFeedback.js
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentActionGoal.js
+assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionResult.js
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentActionFeedback.js
+assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorAction.js
+assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionFeedback.js
+assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorFeedback.js
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleGoal.js
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleAction.js
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleActionFeedback.js
+assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorResult.js
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentGoal.js
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleFeedback.js
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleActionGoal.js
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentResult.js
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentAction.js
+assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorGoal.js
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/Tsp.js
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/TspList.js
 assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/TurtleSpawn.js
@@ -95,9 +102,17 @@ assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_w
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from assignment1/HuntTurtleActionResult.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionResult.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
 
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionGoal.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionGoal.js: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionGoal.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionGoal.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionGoal.js: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorGoal.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionGoal.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from assignment1/ConveyorActionGoal.msg"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionGoal.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
+
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentFeedback.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentFeedback.js: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from assignment1/StartAssignmentFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Javascript code from assignment1/StartAssignmentFeedback.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
 
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentActionGoal.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -105,8 +120,17 @@ assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_w
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentActionGoal.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentActionGoal.js: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentActionGoal.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Javascript code from assignment1/StartAssignmentActionGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Javascript code from assignment1/StartAssignmentActionGoal.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionGoal.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
+
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionResult.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionResult.js: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionResult.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionResult.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionResult.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionResult.js: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorResult.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionResult.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Javascript code from assignment1/ConveyorActionResult.msg"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionResult.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
 
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentActionFeedback.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentActionFeedback.js: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionFeedback.msg
@@ -114,12 +138,40 @@ assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_w
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentActionFeedback.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentActionFeedback.js: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentActionFeedback.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Javascript code from assignment1/StartAssignmentActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Javascript code from assignment1/StartAssignmentActionFeedback.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionFeedback.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
+
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorAction.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorAction.js: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorAction.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorAction.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorAction.js: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorFeedback.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorAction.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorAction.js: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionFeedback.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorAction.js: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorResult.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorAction.js: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionResult.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorAction.js: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionGoal.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorAction.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorAction.js: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorGoal.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Javascript code from assignment1/ConveyorAction.msg"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorAction.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
+
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionFeedback.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionFeedback.js: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionFeedback.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionFeedback.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionFeedback.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionFeedback.js: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorFeedback.msg
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionFeedback.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Javascript code from assignment1/ConveyorActionFeedback.msg"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorActionFeedback.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
+
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorFeedback.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorFeedback.js: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorFeedback.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Javascript code from assignment1/ConveyorFeedback.msg"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorFeedback.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
 
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleGoal.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleGoal.js: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Javascript code from assignment1/HuntTurtleGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Javascript code from assignment1/HuntTurtleGoal.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleGoal.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
 
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleAction.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -133,7 +185,7 @@ assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_w
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleAction.js: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionFeedback.msg
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleAction.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleAction.js: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Javascript code from assignment1/HuntTurtleAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Javascript code from assignment1/HuntTurtleAction.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleAction.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
 
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleActionFeedback.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -142,17 +194,22 @@ assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_w
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleActionFeedback.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleActionFeedback.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleActionFeedback.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Javascript code from assignment1/HuntTurtleActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating Javascript code from assignment1/HuntTurtleActionFeedback.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionFeedback.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
+
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorResult.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorResult.js: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorResult.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating Javascript code from assignment1/ConveyorResult.msg"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorResult.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
 
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentGoal.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentGoal.js: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Javascript code from assignment1/StartAssignmentGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating Javascript code from assignment1/StartAssignmentGoal.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
 
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleFeedback.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleFeedback.js: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Javascript code from assignment1/HuntTurtleFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating Javascript code from assignment1/HuntTurtleFeedback.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleFeedback.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
 
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleActionGoal.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -160,12 +217,12 @@ assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_w
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleActionGoal.js: /opt/ros/melodic/share/actionlib_msgs/msg/GoalID.msg
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleActionGoal.js: /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleGoal.msg
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleActionGoal.js: /opt/ros/melodic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Javascript code from assignment1/HuntTurtleActionGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating Javascript code from assignment1/HuntTurtleActionGoal.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/HuntTurtleActionGoal.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
 
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentResult.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentResult.js: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Javascript code from assignment1/StartAssignmentResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating Javascript code from assignment1/StartAssignmentResult.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentResult.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
 
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentAction.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -179,39 +236,51 @@ assignment1/CMakeFiles/assignment1_generate_messages_nodejs: /home/adam/catkin_w
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentAction.js: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentActionFeedback.msg
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentAction.js: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentFeedback.msg
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentAction.js: /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating Javascript code from assignment1/StartAssignmentAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating Javascript code from assignment1/StartAssignmentAction.msg"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/StartAssignmentAction.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
+
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorGoal.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorGoal.js: /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorGoal.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating Javascript code from assignment1/ConveyorGoal.msg"
+	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/devel/share/assignment1/msg/ConveyorGoal.msg -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg
 
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/Tsp.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/Tsp.js: /home/adam/catkin_ws/src/assignment1/srv/Tsp.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating Javascript code from assignment1/Tsp.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating Javascript code from assignment1/Tsp.srv"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/src/assignment1/srv/Tsp.srv -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv
 
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/TspList.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/TspList.js: /home/adam/catkin_ws/src/assignment1/srv/TspList.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating Javascript code from assignment1/TspList.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating Javascript code from assignment1/TspList.srv"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/src/assignment1/srv/TspList.srv -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv
 
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/TurtleSpawn.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/TurtleSpawn.js: /home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating Javascript code from assignment1/TurtleSpawn.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/adam/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating Javascript code from assignment1/TurtleSpawn.srv"
 	cd /home/adam/catkin_ws/build/assignment1 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/adam/catkin_ws/src/assignment1/srv/TurtleSpawn.srv -Iassignment1:/home/adam/catkin_ws/devel/share/assignment1/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg -p assignment1 -o /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv
 
 assignment1_generate_messages_nodejs: assignment1/CMakeFiles/assignment1_generate_messages_nodejs
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentActionResult.js
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleResult.js
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleActionResult.js
+assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionGoal.js
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentFeedback.js
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentActionGoal.js
+assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionResult.js
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentActionFeedback.js
+assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorAction.js
+assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorActionFeedback.js
+assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorFeedback.js
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleGoal.js
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleAction.js
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleActionFeedback.js
+assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorResult.js
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentGoal.js
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleFeedback.js
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/HuntTurtleActionGoal.js
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentResult.js
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/StartAssignmentAction.js
+assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/msg/ConveyorGoal.js
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/Tsp.js
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/TspList.js
 assignment1_generate_messages_nodejs: /home/adam/catkin_ws/devel/share/gennodejs/ros/assignment1/srv/TurtleSpawn.js

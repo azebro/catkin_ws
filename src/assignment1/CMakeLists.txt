@@ -67,6 +67,7 @@ find_package(catkin REQUIRED COMPONENTS
    FILES
    StartAssignment.action
    HuntTurtle.action
+   Conveyor.action
    
  )
 
