@@ -70,7 +70,7 @@ def execute(goal):
 
         rate.sleep()
     result = ConveyorResult()
-    result.result = "Conveyor completed. Turtles collected: " + str(turleBeltCouner)
+    result.message = "Conveyor completed. Turtles collected: " + str(turleBeltCouner)
     actionServer.set_succeeded(result=result, text="OK")
         
 def cleanup():
@@ -110,7 +110,6 @@ def engagePicker():
     if turtleSelected:
         if 3.3 < currentTurtlePose.x < 3.5:
             picketTurtleState = 1
-        
         x = pickerTurtlePose.x
         y = pickerTurtlePose.y
 
@@ -121,20 +120,20 @@ def engagePicker():
             turtlesOnBelt[currentTurtle].unregister()
             poseSubscribers[currentTurtle].unregister()
             removeTurtle(currentTurtle)
-            rospy.loginfo("killed: " + currentTurtle)
+            #rospy.loginfo("killed: " + currentTurtle)
 
             del turtlesOnBelt[currentTurtle]
             del poseSubscribers[currentTurtle]
-            rospy.loginfo("coordinates: " + str(pickerTurtlePose.x) + str(pickerTurtlePose.y)+ str(pickerTurtlePose.theta))
+            #rospy.loginfo("coordinates: " + str(pickerTurtlePose.x) + str(pickerTurtlePose.y)+ str(pickerTurtlePose.theta))
             movePicker(0)
             turtleSelected = False
 
         if picketTurtleState == 1:
-            rospy.loginfo("move picker")
+            #rospy.loginfo("move picker")
             movePicker(1)
     else:
         if pickerTurtlePose.y < 2.9:
-            rospy.loginfo("move back")
+            #rospy.loginfo("move back")
             movePicker(-1)
         if  2.9 <= pickerTurtlePose.y < 3.0:
             picketTurtleState = 0
