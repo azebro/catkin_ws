@@ -22,20 +22,21 @@ turtleSelected = False
 currentTurtle = None
 currentTurtlePose = Pose()
 pickerTurtle = None
+pickerTurtleSubscriber = None
 pickerTurtlePose = Pose()
 picketTurtleState = 0
 
 
 
 def execute(goal):
-    global spawnCounter, turtlesOnBelt, work, currentTurtle, currentTurtlePose, turtleSelected, pickerTurtle, pickerTurtlePose, poseSubscribers
+    global spawnCounter, turtlesOnBelt, work, currentTurtle, currentTurtlePose, turtleSelected, pickerTurtle, pickerTurtlePose, poseSubscribers, pickerTurtleSubscriber
     turleBeltCouner = 1
     pickerTurtlePose.x = 5.5
     pickerTurtlePose.y = 3
     pickerTurtlePose.theta = -1.5708
 
     response = spawnTurtle.call("picker", 5.5, 3, -1.5708, False)
-    rospy.Subscriber("/" + response.name + "/pose", Pose, pickerTurtlePosition)
+    pickerTurtleSubscriber = rospy.Subscriber("/" + response.name + "/pose", Pose, pickerTurtlePosition)
     pickerTurtle = rospy.Publisher("/picker/cmd_vel", Twist, queue_size = 10)
     if goal.maxSpawns == -1:
         maxSpawns = 1000000
@@ -66,8 +67,24 @@ def execute(goal):
             work = False
 
         rate.sleep()
+    cleanup()
     actionServer.set_succeeded(result=ConveyorResult(), text="OK")
         
+def cleanup():
+    global poseSubscribers, turtlesOnBelt
+    for n, v in poseSubscribers.items():
+        v.unregister()
+        del poseSubscribers[n]
+    for n, v in turtlesOnBelt.items():
+        v.unregister()
+        removeTurtle(n)
+        del turtlesOnBelt[n]
+    pickerTurtle.unregister()
+    pickerTurtleSubscriber.unregister()
+
+
+
+
 
 def spawnBelt():
     if spawnCounter >= frequency * wait:
