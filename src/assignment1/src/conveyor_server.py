@@ -3,6 +3,7 @@
 import rospy
 import actionlib
 import queue
+import random
 from geometry_msgs.msg import Twist
 from std_srvs.srv import *
 from turtlesim.msg import *
@@ -64,14 +65,16 @@ def execute(goal):
         spawnCounter += 1
         
         if turleBeltCouner > maxSpawns:
+            cleanup()
             work = False
 
         rate.sleep()
-    cleanup()
-    actionServer.set_succeeded(result=ConveyorResult(), text="OK")
+    result = ConveyorResult()
+    result.result = "Conveyor completed. Turtles collected: " + str(turleBeltCouner)
+    actionServer.set_succeeded(result=result, text="OK")
         
 def cleanup():
-    global poseSubscribers, turtlesOnBelt, spawnTurtle, removeTurtle
+    global poseSubscribers, turtlesOnBelt, spawnTurtle, removeTurtle, pickerTurtleSubscriber, pickerTurtle
     for n, v in poseSubscribers.items():
         v.unregister()
         del poseSubscribers[n]
@@ -89,7 +92,9 @@ def cleanup():
 
 
 def spawnBelt():
+    global wait
     if spawnCounter >= frequency * wait:
+        wait = random.randint(5, 10)
         return True
     return False
 

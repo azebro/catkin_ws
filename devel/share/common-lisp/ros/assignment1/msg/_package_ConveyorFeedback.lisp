@@ -1,4 +1,4 @@
 (cl:in-package assignment1-msg)
-(cl:export '(RESULT-VAL
-          RESULT
+(cl:export '(MESSAGE-VAL
+          MESSAGE
 ))
