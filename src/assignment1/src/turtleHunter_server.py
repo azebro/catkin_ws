@@ -87,15 +87,9 @@ def prepareProgressBar(initialDistance, currentDistance):
 def findThetaMethod():
     global motion, thetaFound
     targetTheta = atan2(targetTurtle.y - mainTurtle.y, targetTurtle.x - mainTurtle.x)
-    #rospy.loginfo(targetTheta)
-    #rospy.loginfo(abs(targetTheta - mainTurtle.theta))
-    #if (targetTheta < 0):
-    #    targetTheta += 2 * pi
-    #    rospy.loginfo("Theta <0")
+    
     if (abs(targetTheta - mainTurtle.theta) < 0.02):
-        #rospy.loginfo("Theta <0.1")
-        #motion.linear.x = 1
-        #motion.angular.z = 0
+        
         thetaFound = True
     else:
         if not thetaFound:
