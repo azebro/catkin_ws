@@ -71,7 +71,7 @@ def execute(goal):
     actionServer.set_succeeded(result=ConveyorResult(), text="OK")
         
 def cleanup():
-    global poseSubscribers, turtlesOnBelt
+    global poseSubscribers, turtlesOnBelt, spawnTurtle, removeTurtle
     for n, v in poseSubscribers.items():
         v.unregister()
         del poseSubscribers[n]
@@ -81,6 +81,8 @@ def cleanup():
         del turtlesOnBelt[n]
     pickerTurtle.unregister()
     pickerTurtleSubscriber.unregister()
+    spawnTurtle.close()
+    removeTurtle.close()
 
 
 
