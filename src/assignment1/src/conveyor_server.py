@@ -16,6 +16,7 @@ frequency = 20
 wait = 5
 spawnCounter = frequency * wait
 turtlesOnBelt = {}
+poseSubscribers = {}
 queue = queue.Queue()
 turtleSelected = False
 currentTurtle = None
@@ -27,7 +28,7 @@ picketTurtleState = 0
 
 
 def execute(goal):
-    global spawnCounter, turtlesOnBelt, work, currentTurtle, currentTurtlePose, turtleSelected, pickerTurtle, pickerTurtlePose
+    global spawnCounter, turtlesOnBelt, work, currentTurtle, currentTurtlePose, turtleSelected, pickerTurtle, pickerTurtlePose, poseSubscribers
     turleBeltCouner = 1
     pickerTurtlePose.x = 5.5
     pickerTurtlePose.y = 3
@@ -53,7 +54,8 @@ def execute(goal):
             moveTurtle(beltTurtle)
         if not turtleSelected and picketTurtleState == 0 and not queue.empty():
             currentTurtle = queue.get()
-            rospy.Subscriber("/" + currentTurtle + "/pose", Pose, currentTurtlePosition)
+            ps = rospy.Subscriber("/" + currentTurtle + "/pose", Pose, currentTurtlePosition)
+            poseSubscribers[currentTurtle] = ps
             turtleSelected = True
 
         engagePicker()
@@ -80,7 +82,7 @@ def moveTurtle(turtle):
     turtle.publish(motion)
 
 def engagePicker():
-    global turtleSelected, picketTurtleState, turtlesOnBelt
+    global turtleSelected, picketTurtleState, turtlesOnBelt, poseSubscribers
     if turtleSelected:
         if 3.3 < currentTurtlePose.x < 3.5:
             picketTurtleState = 1
@@ -92,9 +94,13 @@ def engagePicker():
             picketTurtleState = 2
 
         if picketTurtleState == 2:
+            turtlesOnBelt[currentTurtle].unregister()
+            poseSubscribers[currentTurtle].unregister()
             removeTurtle(currentTurtle)
             rospy.loginfo("killed: " + currentTurtle)
+
             del turtlesOnBelt[currentTurtle]
+            del poseSubscribers[currentTurtle]
             rospy.loginfo("coordinates: " + str(pickerTurtlePose.x) + str(pickerTurtlePose.y)+ str(pickerTurtlePose.theta))
             movePicker(0)
             turtleSelected = False

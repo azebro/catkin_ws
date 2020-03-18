@@ -19,11 +19,8 @@ mainTurtle = Pose()
 
 def execute(goal):
     global turtleTargetx, turtleTargety
-    rospy.loginfo("Goal started" )
-    #clear()
-
-
-    
+    rospy.loginfo("Assignment 1 started" )
+       
 
 
     rospy.loginfo("Creating number of requested turtles: " + str(goal.numberOfTurtles))
