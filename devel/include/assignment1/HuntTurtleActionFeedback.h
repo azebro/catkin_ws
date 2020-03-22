@@ -127,12 +127,12 @@ struct MD5Sum< ::assignment1::HuntTurtleActionFeedback_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "4ff2e11983b40c70632e3239051e82a7";
+    return "5ebc03903241a119ecd877f772692bd9";
   }
 
   static const char* value(const ::assignment1::HuntTurtleActionFeedback_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x4ff2e11983b40c70ULL;
-  static const uint64_t static_value2 = 0x632e3239051e82a7ULL;
+  static const uint64_t static_value1 = 0x5ebc03903241a119ULL;
+  static const uint64_t static_value2 = 0xecd877f772692bd9ULL;
 };
 
 template<class ContainerAllocator>
@@ -218,6 +218,7 @@ struct Definition< ::assignment1::HuntTurtleActionFeedback_<ContainerAllocator> 
 "#feedback\n"
 "string progressBar\n"
 "float32 progress\n"
+"string timeRemaining\n"
 ;
   }
 

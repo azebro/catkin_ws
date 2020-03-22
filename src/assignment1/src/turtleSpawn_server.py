@@ -6,14 +6,17 @@ from turtlesim.msg import *
 from turtlesim.srv import *
 from assignment1.srv import TurtleSpawn, TurtleSpawnResponse
 
+#Turtle spawning server
 def spawn(request):
     rospy.loginfo("Turtle Spawn called")
+    #Check if random or spawn on desired coordinates
     if request.random:
         x = random.randint(1,10)
         y = random.randint(5,10)
     else:
         x = request.x
         y = request.y
+    #Call spawn
     response = spawnService.call(x, y, request.theta, request.name )
     output = TurtleSpawnResponse()
     output.x = x

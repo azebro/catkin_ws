@@ -25,11 +25,13 @@ struct HuntTurtleFeedback_
 
   HuntTurtleFeedback_()
     : progressBar()
-    , progress(0.0)  {
+    , progress(0.0)
+    , timeRemaining()  {
     }
   HuntTurtleFeedback_(const ContainerAllocator& _alloc)
     : progressBar(_alloc)
-    , progress(0.0)  {
+    , progress(0.0)
+    , timeRemaining(_alloc)  {
   (void)_alloc;
     }
 
@@ -40,6 +42,9 @@ struct HuntTurtleFeedback_
 
    typedef float _progress_type;
   _progress_type progress;
+
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _timeRemaining_type;
+  _timeRemaining_type timeRemaining;
 
 
 
@@ -119,12 +124,12 @@ struct MD5Sum< ::assignment1::HuntTurtleFeedback_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "f524f93747ee10b3b3f3e8195a58a02c";
+    return "ebd791a2e9bf1e98d90417c0e82beb3e";
   }
 
   static const char* value(const ::assignment1::HuntTurtleFeedback_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xf524f93747ee10b3ULL;
-  static const uint64_t static_value2 = 0xb3f3e8195a58a02cULL;
+  static const uint64_t static_value1 = 0xebd791a2e9bf1e98ULL;
+  static const uint64_t static_value2 = 0xd90417c0e82beb3eULL;
 };
 
 template<class ContainerAllocator>
@@ -147,6 +152,7 @@ struct Definition< ::assignment1::HuntTurtleFeedback_<ContainerAllocator> >
 "#feedback\n"
 "string progressBar\n"
 "float32 progress\n"
+"string timeRemaining\n"
 ;
   }
 
@@ -167,6 +173,7 @@ namespace serialization
     {
       stream.next(m.progressBar);
       stream.next(m.progress);
+      stream.next(m.timeRemaining);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -189,6 +196,8 @@ struct Printer< ::assignment1::HuntTurtleFeedback_<ContainerAllocator> >
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.progressBar);
     s << indent << "progress: ";
     Printer<float>::stream(s, indent + "  ", v.progress);
+    s << indent << "timeRemaining: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.timeRemaining);
   }
 };
 

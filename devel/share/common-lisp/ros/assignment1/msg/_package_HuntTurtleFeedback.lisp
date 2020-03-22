@@ -3,4 +3,6 @@
           PROGRESSBAR
           PROGRESS-VAL
           PROGRESS
+          TIMEREMAINING-VAL
+          TIMEREMAINING
 ))

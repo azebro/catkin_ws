@@ -86,7 +86,7 @@ class HuntTurtleActionFeedback {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '4ff2e11983b40c70632e3239051e82a7';
+    return '5ebc03903241a119ecd877f772692bd9';
   }
 
   static messageDefinition() {
@@ -159,6 +159,7 @@ class HuntTurtleActionFeedback {
     #feedback
     string progressBar
     float32 progress
+    string timeRemaining
     
     `;
   }

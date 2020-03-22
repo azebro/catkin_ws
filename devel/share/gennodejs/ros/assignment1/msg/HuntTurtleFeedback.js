@@ -20,6 +20,7 @@ class HuntTurtleFeedback {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.progressBar = null;
       this.progress = null;
+      this.timeRemaining = null;
     }
     else {
       if (initObj.hasOwnProperty('progressBar')) {
@@ -34,6 +35,12 @@ class HuntTurtleFeedback {
       else {
         this.progress = 0.0;
       }
+      if (initObj.hasOwnProperty('timeRemaining')) {
+        this.timeRemaining = initObj.timeRemaining
+      }
+      else {
+        this.timeRemaining = '';
+      }
     }
   }
 
@@ -43,6 +50,8 @@ class HuntTurtleFeedback {
     bufferOffset = _serializer.string(obj.progressBar, buffer, bufferOffset);
     // Serialize message field [progress]
     bufferOffset = _serializer.float32(obj.progress, buffer, bufferOffset);
+    // Serialize message field [timeRemaining]
+    bufferOffset = _serializer.string(obj.timeRemaining, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -54,13 +63,16 @@ class HuntTurtleFeedback {
     data.progressBar = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [progress]
     data.progress = _deserializer.float32(buffer, bufferOffset);
+    // Deserialize message field [timeRemaining]
+    data.timeRemaining = _deserializer.string(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += object.progressBar.length;
-    return length + 8;
+    length += object.timeRemaining.length;
+    return length + 12;
   }
 
   static datatype() {
@@ -70,7 +82,7 @@ class HuntTurtleFeedback {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'f524f93747ee10b3b3f3e8195a58a02c';
+    return 'ebd791a2e9bf1e98d90417c0e82beb3e';
   }
 
   static messageDefinition() {
@@ -80,6 +92,7 @@ class HuntTurtleFeedback {
     #feedback
     string progressBar
     float32 progress
+    string timeRemaining
     
     `;
   }
@@ -102,6 +115,13 @@ class HuntTurtleFeedback {
     }
     else {
       resolved.progress = 0.0
+    }
+
+    if (msg.timeRemaining !== undefined) {
+      resolved.timeRemaining = msg.timeRemaining;
+    }
+    else {
+      resolved.timeRemaining = ''
     }
 
     return resolved;

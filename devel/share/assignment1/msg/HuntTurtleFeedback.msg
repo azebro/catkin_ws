@@ -2,3 +2,4 @@
 #feedback
 string progressBar
 float32 progress
+string timeRemaining

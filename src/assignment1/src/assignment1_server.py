@@ -21,35 +21,31 @@ def execute(goal):
     global turtleTargetx, turtleTargety
     rospy.loginfo("Assignment 1 started" )
        
-
-
     rospy.loginfo("Creating number of requested turtles: " + str(goal.numberOfTurtles))
     
+    #Spawn desired number of turtles
     result = spawnTurtles(goal.numberOfTurtles)
-    
     rospy.loginfo("Targets created" + str(result))
-    rospy.loginfo(result.shape)
+    
+    #Add the original position of the turtle as a last point of the route
     tspList = np.concatenate((np.array([mainTurtle.x, mainTurtle.y, mainTurtle.theta, 1]).reshape(1,4), result), axis=0)
     pickled = pickle.dumps(tspList, protocol=0)
-    tsp = Tsp()
-    tsp.turtles = pickled
+    #Calculate all route including return to original position
+    
     routePickled = calculateRoute(pickled)
     route = pickle.loads(routePickled.sequence)
-    rospy.loginfo(route.shape)
+    
     rospy.loginfo("Route received: " + str(route))
-    #for i in range(2, goal.numberOfTurtles+2):
-    #rospy.loginfo(result[int(route[1]),0])
-
-
+    
     conveyorClient = actionlib.SimpleActionClient("/startConveyor", ConveyorAction)
     conveyorClient.wait_for_server()
-    rospy.loginfo("Server found")
+    rospy.loginfo("Conveyor server found")
     conveyorGoal = ConveyorGoal()
-    conveyorGoal.maxSpawns = 20
+    #Spawn infinite number of belt turtles
+    conveyorGoal.maxSpawns = -1
     conveyorClient.send_goal(conveyorGoal, feedback_cb=conveyorDone)
-    conveyorClient.stop_tracking_goal()
+    #conveyorClient.stop_tracking_goal()
     rospy.loginfo("Get main turtle, assuming turtle1")
-
 
 
     huntClient = actionlib.SimpleActionClient("/huntTurtle", HuntTurtleAction)
@@ -58,12 +54,10 @@ def execute(goal):
     initialY = mainTurtle.y
     initialTheta = mainTurtle.theta
     rospy.loginfo("Hunt server found")
+    #Hunt each turtle
     for i in range(0, len(result)):
 
-        #targetTurtle = result[i,:]
-        #turtleTargetx = targetTurtle[0]
-        #turtleTargety = targetTurtle[1]
-        
+     
         huntGoal = HuntTurtleGoal()
         huntGoal.hunterX = mainTurtle.x
         huntGoal.hunterY = mainTurtle.y
@@ -80,15 +74,15 @@ def execute(goal):
         rospy.loginfo("Processing turtle: " + "turtle" + str(int(targetAttributes[3])))
         huntClient.send_goal(huntGoal, feedback_cb=huntFeedback)
         huntClient.wait_for_result()
-        res = huntClient.get_result()
+        
 
     huntGoal = HuntTurtleGoal()
     huntGoal.hunterX = mainTurtle.x
     huntGoal.hunterY = mainTurtle.y
     huntGoal.hunterTheta = mainTurtle.theta
     huntGoal.hunterName = "turtle1"
-    #rospy.loginfo("target X: " + str(result[result[:,3] == int(route[1])][0,0]))
     
+    #Return to the original position
     huntGoal.targetX = initialX
     huntGoal.targetY = initialY
     huntGoal.targetTheta = initialTheta
@@ -98,7 +92,7 @@ def execute(goal):
     rospy.loginfo("Processing turtle: " + "turtle" + str(int(targetAttributes[3])))
     huntClient.send_goal(huntGoal, feedback_cb=huntFeedback)
     huntClient.wait_for_result()
-    res = huntClient.get_result()
+    
 
    
     output = StartAssignmentResult()
@@ -110,51 +104,26 @@ def execute(goal):
 def conveyorDone(a):
     pass
 
-    
+#Display the progress bar
 def huntFeedback(feedback):
     rospy.loginfo(feedback.progressBar)
+    rospy.loginfo("Time remaining to intercept: " + feedback.timeRemaining)
 
 
-def getDistance(x1, y1, x2, y2):
-    return sqrt(pow((x2-x1),2) + pow((y2-y1),2))
-
-def getMainurtle():
-    pass
-
-def tutorialMethod(x1, x2, th1, y1, y2):
-    m = Twist()
-    targetTheta = atan2(y2 - y1, x2 - x1)
-    m.linear.x = 1.5 * getDistance(x1, y1, x2, y2)
-    m.angular.z = 4 * (targetTheta - th1) 
-    pub.publish(m)
-
-
-
-
+#Spawn turtles
 def spawnTurtles(numberOfTurtles):
     turtlesList = []
     
     rospy.loginfo("Spawning targets")
 
     for i in range(2, numberOfTurtles+2):
-        x = random.randint(1,10)
-        y = random.randint(5,10)
         name = "turtle" + str(i)
         response = spawnTurtle.call(name, 0, 0, 0, True)
         turtlesList.append([response.x, response.y, response.theta, i])
     spawnTurtle.close()
     return np.array(turtlesList)
 
-def spawnTurtle(x, y, name, theta = 0):
-    spawnService = rospy.ServiceProxy("/spawn", Spawn)
-    spawnService(x, y, theta, name )
 
-
-
-def calculateDistance(x1, x2, y1, y2):
-
-    distance =  sqrt( (x1 - x2)**2 + (y1 - y2)**2) 
-    return distance
 
 def mainPose(data):
     global mainTurtle
@@ -162,7 +131,7 @@ def mainPose(data):
     mainTurtle.y = data.y
     mainTurtle.theta = data.theta
 
-lastDistance = 100000
+
 rospy.init_node("assignment")
 rate = rospy.Rate(30)
 mainTurtle = Pose()

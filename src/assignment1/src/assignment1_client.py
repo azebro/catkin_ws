@@ -4,6 +4,7 @@ import rospy
 import actionlib
 import ast
 import numpy as np
+import random
 
 from assignment1.msg import StartAssignmentResult, StartAssignmentFeedback, StartAssignmentAction, StartAssignmentGoal
 
@@ -15,11 +16,10 @@ client = actionlib.SimpleActionClient("/startAssignment", StartAssignmentAction)
 client.wait_for_server()
 rospy.loginfo("Server found")
 goal = StartAssignmentGoal()
-goal.numberOfTurtles = 10
+#Number of turtles to spawn
+n = random.randint(5, 10)
+goal.numberOfTurtles = n
 client.send_goal(goal, feedback_cb=feedbackCallback)
 client.wait_for_result()
 result = client.get_result()
-#arr = ast.literal_eval(result.turtlesCollected)
-arr2 = np.array(result.turtlesCollected)
-print(arr2)
 rospy.loginfo("Done " + str(result.turtlesCollected))
