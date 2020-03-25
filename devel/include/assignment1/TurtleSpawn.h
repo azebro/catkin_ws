@@ -57,8 +57,8 @@ struct DataType< ::assignment1::TurtleSpawn > {
 };
 
 
-// service_traits::MD5Sum< ::assignment1::TurtleSpawnRequest> should match 
-// service_traits::MD5Sum< ::assignment1::TurtleSpawn > 
+// service_traits::MD5Sum< ::assignment1::TurtleSpawnRequest> should match
+// service_traits::MD5Sum< ::assignment1::TurtleSpawn >
 template<>
 struct MD5Sum< ::assignment1::TurtleSpawnRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::assignment1::TurtleSpawnRequest>
   }
 };
 
-// service_traits::DataType< ::assignment1::TurtleSpawnRequest> should match 
-// service_traits::DataType< ::assignment1::TurtleSpawn > 
+// service_traits::DataType< ::assignment1::TurtleSpawnRequest> should match
+// service_traits::DataType< ::assignment1::TurtleSpawn >
 template<>
 struct DataType< ::assignment1::TurtleSpawnRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::assignment1::TurtleSpawnRequest>
   }
 };
 
-// service_traits::MD5Sum< ::assignment1::TurtleSpawnResponse> should match 
-// service_traits::MD5Sum< ::assignment1::TurtleSpawn > 
+// service_traits::MD5Sum< ::assignment1::TurtleSpawnResponse> should match
+// service_traits::MD5Sum< ::assignment1::TurtleSpawn >
 template<>
 struct MD5Sum< ::assignment1::TurtleSpawnResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::assignment1::TurtleSpawnResponse>
   }
 };
 
-// service_traits::DataType< ::assignment1::TurtleSpawnResponse> should match 
-// service_traits::DataType< ::assignment1::TurtleSpawn > 
+// service_traits::DataType< ::assignment1::TurtleSpawnResponse> should match
+// service_traits::DataType< ::assignment1::TurtleSpawn >
 template<>
 struct DataType< ::assignment1::TurtleSpawnResponse>
 {

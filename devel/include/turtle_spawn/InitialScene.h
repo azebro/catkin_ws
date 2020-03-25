@@ -57,8 +57,8 @@ struct DataType< ::turtle_spawn::InitialScene > {
 };
 
 
-// service_traits::MD5Sum< ::turtle_spawn::InitialSceneRequest> should match 
-// service_traits::MD5Sum< ::turtle_spawn::InitialScene > 
+// service_traits::MD5Sum< ::turtle_spawn::InitialSceneRequest> should match
+// service_traits::MD5Sum< ::turtle_spawn::InitialScene >
 template<>
 struct MD5Sum< ::turtle_spawn::InitialSceneRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::turtle_spawn::InitialSceneRequest>
   }
 };
 
-// service_traits::DataType< ::turtle_spawn::InitialSceneRequest> should match 
-// service_traits::DataType< ::turtle_spawn::InitialScene > 
+// service_traits::DataType< ::turtle_spawn::InitialSceneRequest> should match
+// service_traits::DataType< ::turtle_spawn::InitialScene >
 template<>
 struct DataType< ::turtle_spawn::InitialSceneRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::turtle_spawn::InitialSceneRequest>
   }
 };
 
-// service_traits::MD5Sum< ::turtle_spawn::InitialSceneResponse> should match 
-// service_traits::MD5Sum< ::turtle_spawn::InitialScene > 
+// service_traits::MD5Sum< ::turtle_spawn::InitialSceneResponse> should match
+// service_traits::MD5Sum< ::turtle_spawn::InitialScene >
 template<>
 struct MD5Sum< ::turtle_spawn::InitialSceneResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::turtle_spawn::InitialSceneResponse>
   }
 };
 
-// service_traits::DataType< ::turtle_spawn::InitialSceneResponse> should match 
-// service_traits::DataType< ::turtle_spawn::InitialScene > 
+// service_traits::DataType< ::turtle_spawn::InitialSceneResponse> should match
+// service_traits::DataType< ::turtle_spawn::InitialScene >
 template<>
 struct DataType< ::turtle_spawn::InitialSceneResponse>
 {

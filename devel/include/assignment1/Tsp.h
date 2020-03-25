@@ -57,8 +57,8 @@ struct DataType< ::assignment1::Tsp > {
 };
 
 
-// service_traits::MD5Sum< ::assignment1::TspRequest> should match 
-// service_traits::MD5Sum< ::assignment1::Tsp > 
+// service_traits::MD5Sum< ::assignment1::TspRequest> should match
+// service_traits::MD5Sum< ::assignment1::Tsp >
 template<>
 struct MD5Sum< ::assignment1::TspRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::assignment1::TspRequest>
   }
 };
 
-// service_traits::DataType< ::assignment1::TspRequest> should match 
-// service_traits::DataType< ::assignment1::Tsp > 
+// service_traits::DataType< ::assignment1::TspRequest> should match
+// service_traits::DataType< ::assignment1::Tsp >
 template<>
 struct DataType< ::assignment1::TspRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::assignment1::TspRequest>
   }
 };
 
-// service_traits::MD5Sum< ::assignment1::TspResponse> should match 
-// service_traits::MD5Sum< ::assignment1::Tsp > 
+// service_traits::MD5Sum< ::assignment1::TspResponse> should match
+// service_traits::MD5Sum< ::assignment1::Tsp >
 template<>
 struct MD5Sum< ::assignment1::TspResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::assignment1::TspResponse>
   }
 };
 
-// service_traits::DataType< ::assignment1::TspResponse> should match 
-// service_traits::DataType< ::assignment1::Tsp > 
+// service_traits::DataType< ::assignment1::TspResponse> should match
+// service_traits::DataType< ::assignment1::Tsp >
 template<>
 struct DataType< ::assignment1::TspResponse>
 {

@@ -135,7 +135,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/adam/catkin_ws/build/lab03_services/cmake_install.cmake")
   include("/home/adam/catkin_ws/build/my_package/cmake_install.cmake")
   include("/home/adam/catkin_ws/build/my_topics_package/cmake_install.cmake")
-  include("/home/adam/catkin_ws/build/openai_ros/openai_ros/cmake_install.cmake")
   include("/home/adam/catkin_ws/build/turtle_spawn/cmake_install.cmake")
 
 endif()

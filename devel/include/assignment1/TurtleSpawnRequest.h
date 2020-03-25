@@ -81,6 +81,24 @@ ros::message_operations::Printer< ::assignment1::TurtleSpawnRequest_<ContainerAl
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::assignment1::TurtleSpawnRequest_<ContainerAllocator1> & lhs, const ::assignment1::TurtleSpawnRequest_<ContainerAllocator2> & rhs)
+{
+  return lhs.name == rhs.name &&
+    lhs.x == rhs.x &&
+    lhs.y == rhs.y &&
+    lhs.theta == rhs.theta &&
+    lhs.random == rhs.random;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::assignment1::TurtleSpawnRequest_<ContainerAllocator1> & lhs, const ::assignment1::TurtleSpawnRequest_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace assignment1
 
 namespace ros
@@ -88,12 +106,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
-// {'actionlib_msgs': ['/opt/ros/melodic/share/actionlib_msgs/cmake/../msg'], 'assignment1': ['/home/adam/catkin_ws/devel/share/assignment1/msg'], 'std_msgs': ['/opt/ros/melodic/share/std_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 

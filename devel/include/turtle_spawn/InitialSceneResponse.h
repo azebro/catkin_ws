@@ -71,6 +71,22 @@ ros::message_operations::Printer< ::turtle_spawn::InitialSceneResponse_<Containe
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::turtle_spawn::InitialSceneResponse_<ContainerAllocator1> & lhs, const ::turtle_spawn::InitialSceneResponse_<ContainerAllocator2> & rhs)
+{
+  return lhs.tsp_turtles == rhs.tsp_turtles &&
+    lhs.conveyor_turtle == rhs.conveyor_turtle &&
+    lhs.catch_turtle == rhs.catch_turtle;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::turtle_spawn::InitialSceneResponse_<ContainerAllocator1> & lhs, const ::turtle_spawn::InitialSceneResponse_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace turtle_spawn
 
 namespace ros
@@ -78,12 +94,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
-// {'std_msgs': ['/opt/ros/melodic/share/std_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
