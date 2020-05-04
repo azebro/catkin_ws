@@ -136,6 +136,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/adam/catkin_ws/build/my_package/cmake_install.cmake")
   include("/home/adam/catkin_ws/build/my_topics_package/cmake_install.cmake")
   include("/home/adam/catkin_ws/build/turtle_spawn/cmake_install.cmake")
+  include("/home/adam/catkin_ws/build/my_first_robot_description/cmake_install.cmake")
+  include("/home/adam/catkin_ws/build/my_ur3_description/cmake_install.cmake")
 
 endif()
 
