@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+  <rosparam file="$(find my_ur3_description)/config/ur3.yaml" command="load"/>
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    outputs="roll_joint_position_controller joint_state_controller --shutdown-timeout 3"/>
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"    respawn="false" output="screen">
+    <remap from="/joint_states" to="/ur3/joint_states" />
+  </node>
+</launch>

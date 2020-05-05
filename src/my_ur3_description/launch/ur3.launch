@@ -18,5 +18,6 @@
   <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1" respawn="false" output="screen" />
 
   <!-- Add controller launch file here -->
+  <include file="$(find my_ur3_description)/launch/ur3_control.launch"/>
 
 </launch>
