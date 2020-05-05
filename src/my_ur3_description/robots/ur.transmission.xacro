@@ -4,17 +4,71 @@
   <xacro:macro name="ur_arm_transmission" params="prefix">
 
 
-<transmission name="tran1">
+<transmission name="spj_tran">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="${prefix}shoulder_pan_joint">
         <hardwareInterface>EffortJointInterface</hardwareInterface>
     </joint>
-    <actuator name="motor1">
+    <actuator name="spj_motor">
         <hardwareInterface>EffortJointInterface</hardwareInterface>
         <mechanicalReduction>1</mechanicalReduction>
     </actuator>
 </transmission>
 
+<transmission name="slj_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${prefix}shoulder_lift_joint">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="slj_motor">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="ej_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${prefix}elbow_joint">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="ej_motor">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="w1j_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${prefix}wrist_1_joint">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="w1j_motor">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="w2j_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${prefix}wrist_2_joint">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="w1j_motor">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="w3j_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${prefix}wrist_3_joint">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="w1j_motor">
+        <hardwareInterface>EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+</transmission>
     <!-- Add controller transmissions here -->
 
   </xacro:macro>
