@@ -456,6 +456,12 @@ my_ur3_description_BINARY_DIR:STATIC=/home/adam/catkin_ws/build/my_ur3_descripti
 //Value Computed by CMake
 my_ur3_description_SOURCE_DIR:STATIC=/home/adam/catkin_ws/src/my_ur3_description
 
+//Value Computed by CMake
+my_ur3_reach_BINARY_DIR:STATIC=/home/adam/catkin_ws/build/my_ur3_reach
+
+//Value Computed by CMake
+my_ur3_reach_SOURCE_DIR:STATIC=/home/adam/catkin_ws/src/my_ur3_reach
+
 //The directory containing a CMake configuration file for nav_msgs.
 nav_msgs_DIR:PATH=/opt/ros/melodic/share/nav_msgs/cmake
 
@@ -665,7 +671,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=12
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

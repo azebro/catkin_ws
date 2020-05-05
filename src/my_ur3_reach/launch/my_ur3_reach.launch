@@ -1,0 +1,4 @@
+<launch>  
+    <!-- Assignment 2, task 2 launch file -->
+    <node pkg="my_ur3_reach" type="execute.py" name="Ur3Reach" output ="screen"/> 
+</launch>
