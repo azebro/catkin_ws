@@ -2,6 +2,7 @@
 
 import rospy
 import actionlib
+import tf
 from  std_msgs.msg import Float64
 from sensor_msgs.msg import JointState
 from control_msgs.msg import JointControllerState
@@ -22,6 +23,7 @@ def robotJointState(data):
 
 
 rospy.init_node("my_ur3_reach")
+listener = tf.TransformListener()
 rate = rospy.Rate(30)
 stateOfJoint = JointState()
 command= "/ur3/{}_position_controller/command"
@@ -77,9 +79,15 @@ while not rospy.is_shutdown() and run:
         index = stateOfRobotsJoints.name.index(prompts[selection])
         actualPosition = stateOfRobotsJoints.position[index]
         error = position - actualPosition
+        (trans,rot) = listener.lookupTransform('wrist_3_link', 'base_link', rospy.Time(0))
+    
         print("\nResult of the move:")
         print("Actual positon of {} is : {:.10f}".format(selectionName, actualPosition))
         print("Error in positon of {} is : {:.10f}\n".format(selectionName, error))
+        print("End factor relative to base:")
+        print("Position: x: {:f}, y:{}, z:{}".format(trans[0], trans[1], trans[2]))
+        print("Orientation: x:{}, y:{}, z:{}, w:{}".format(rot[0], rot[1], rot[2], rot[3]))
+        print("\n\n")
     
    
     rate.sleep()
