@@ -85,7 +85,7 @@ while not rospy.is_shutdown() and run:
         print("Actual positon of {} is : {:.10f}".format(selectionName, actualPosition))
         print("Error in positon of {} is : {:.10f}\n".format(selectionName, error))
         print("End factor relative to base:")
-        print("Position: x: {:f}, y:{}, z:{}".format(trans[0], trans[1], trans[2]))
+        print("Position: x:{}, y:{}, z:{}".format(trans[0], trans[1], trans[2]))
         print("Orientation: x:{}, y:{}, z:{}, w:{}".format(rot[0], rot[1], rot[2], rot[3]))
         print("\n\n")
     
