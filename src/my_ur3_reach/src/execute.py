@@ -3,11 +3,32 @@
 import rospy
 import actionlib
 from  std_msgs.msg import Float64
+from sensor_msgs.msg import JointState
+from control_msgs.msg import JointControllerState
+
+stateOfJoint = JointControllerState()
+stateOfRobotsJoints = JointState()
+jointSatateSubUri = "/ur3/{}_position_controller/state"
+
+
+def jointState(data):
+    global stateOfJoint
+    stateOfJoint = data
+
+def robotJointState(data):
+    global stateOfRobotsJoints
+    stateOfRobotsJoints = data
+
 
 
 rospy.init_node("my_ur3_reach")
 rate = rospy.Rate(30)
+stateOfJoint = JointState()
 command= "/ur3/{}_position_controller/command"
+jointStateSub = rospy.Subscriber("/ur3/joint_states", JointState, robotJointState)
+
+
+    
 run = True
 setup = False
 prompts = {
@@ -32,16 +53,6 @@ for joint in prompts.values():
     pub = rospy.Publisher(uri, Float64, queue_size = 10)
     publishers.append(pub)
 
-counter = 1
-while not rospy.is_shutdown() :
-    for pub in publishers:
-       executeMove(pub, 0)
-       counter +=1
-    
-       
-    rate.sleep()
-    
-rospy.loginfo("Robot zeroed")
 
 while not rospy.is_shutdown() and run:
     
@@ -55,11 +66,20 @@ while not rospy.is_shutdown() and run:
     if selection == 7:
         run = False
     else:
-        position = float(input("What position move {} to? ".format(prompts[selection])))
+        selectionName = prompts[selection]
+        #jointStateSub = rospy.Subscriber(jointSatateSubUri.format(selectionName), JointControllerState, jointState)
+        position = float(input("What position move {} to? ".format(selectionName)))
         pub = publishers[selection -1]
         fl = Float64()
         fl.data = position
         pub.publish(fl)
+        rospy.sleep(1)
+        index = stateOfRobotsJoints.name.index(prompts[selection])
+        actualPosition = stateOfRobotsJoints.position[index]
+        error = position - actualPosition
+        print("\nResult of the move:")
+        print("Actual positon of {} is : {:.10f}".format(selectionName, actualPosition))
+        print("Error in positon of {} is : {:.10f}\n".format(selectionName, error))
     
    
     rate.sleep()
