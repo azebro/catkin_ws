@@ -3,7 +3,7 @@
   <param name="robot_description" command="$(find xacro)/xacro '$(find my_ur3_description)/robots/ur3_robot.urdf.xacro'" />
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
     <param name="use_gui" value="true"/>
-  <rosparam file="$(find my_mira_description)/config/ur3.yaml" command="load"/>
+  <rosparam file="$(find my_ur3_description)/config/ur3.yaml" command="load"/>
   </node>
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find my_ur3_description)/rviz_config/ur3.rviz" /> 
