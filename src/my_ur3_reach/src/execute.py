@@ -69,18 +69,29 @@ while not rospy.is_shutdown() and run:
         run = False
     else:
         selectionName = prompts[selection]
-        #jointStateSub = rospy.Subscriber(jointSatateSubUri.format(selectionName), JointControllerState, jointState)
+        
         position = float(input("What position move {} to? ".format(selectionName)))
         pub = publishers[selection -1]
         fl = Float64()
         fl.data = position
         pub.publish(fl)
+        #Letting the robot move, pause execution
         rospy.sleep(1)
         index = stateOfRobotsJoints.name.index(prompts[selection])
         actualPosition = stateOfRobotsJoints.position[index]
+
+        #I can obtain the same from this service /ur3/xxx_position_controller/state
+        #where xxx is the joint name
+        #but given that error ther is defined as:
+        # process_value - set_point, I should receive the same outcome without 
+        #additional call
+        #but if wanted to implement that:
+        #jointStateSub = rospy.Subscriber(jointSatateSubUri.format(selectionName), JointControllerState, jointState)
+        #error = stateOfJoint.error
+
         error = position - actualPosition
         (trans,rot) = listener.lookupTransform('wrist_3_link', 'base_link', rospy.Time(0))
-    
+        ### TODO: add exception handling as per tf lab ~28.24min
         print("\nResult of the move:")
         print("Actual positon of {} is : {:.10f}".format(selectionName, actualPosition))
         print("Error in positon of {} is : {:.10f}\n".format(selectionName, error))
