@@ -9,7 +9,6 @@ if [ -n "$DESTDIR" ] ; then
             /bin/echo "otherwise python's distutils will bork things."
             exit 1
     esac
-    DESTDIR_ARG="--root=$DESTDIR"
 fi
 
 echo_and_run() { echo "+ $@" ; "$@" ; }
@@ -29,5 +28,5 @@ echo_and_run /usr/bin/env \
     "/home/adam/catkin_ws/src/openai_ros/openai_ros/setup.py" \
     build --build-base "/home/adam/catkin_ws/build/openai_ros/openai_ros" \
     install \
-    $DESTDIR_ARG \
+    --root="${DESTDIR-/}" \
     --install-layout=deb --prefix="/home/adam/catkin_ws/install" --install-scripts="/home/adam/catkin_ws/install/bin"
