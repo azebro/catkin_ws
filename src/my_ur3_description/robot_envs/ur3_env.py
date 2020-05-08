@@ -33,6 +33,7 @@ from openai_ros import robot_gazebo_env
 from openai_ros.openai_ros_common import ROSLauncher
 
 
+
 class UR3Env(robot_gazebo_env.RobotGazeboEnv):
 
     def __init__(self, ros_ws_abspath):

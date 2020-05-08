@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from  robot_envs import UR3Env
+from  ur3_env import UR3Env
 from gym import utils
 #from my_ur3_description.robot_envs import ur3_env
 from gym.envs.registration import register
@@ -13,7 +13,7 @@ from openai_ros.openai_ros_common import ROSLauncher
 import os
 
 
-class CartPoleStayUpEnv(ur3_env.UR3Env):
+class CartPoleStayUpEnv(UR3Env):
     
     def __init__(self):
 
@@ -60,14 +60,23 @@ class CartPoleStayUpEnv(ur3_env.UR3Env):
         self.n_actions = rospy.get_param('/ur3/n_actions')
         self.n_observations = rospy.get_param('/ur3/n_observations')
         self.max_iterations = rospy.get_param('/ur3/max_iterations')
+        
+        '''
         self.max_base_velocity = rospy.get_param('/cartpole_v0/max_base_velocity')
         self.min_base_pose_x = rospy.get_param('/cartpole_v0/min_base_pose_x')
         self.max_base_pose_x = rospy.get_param('/cartpole_v0/max_base_pose_x')
         self.pos_step = rospy.get_param('/cartpole_v0/pos_step')
         self.running_step = rospy.get_param('/cartpole_v0/running_step')
-        self.init_pos = rospy.get_param('/cartpole_v0/init_pos')
+        '''
+
+        self.init_pos = rospy.get_param('/ur3/init_pos')
+        self.gloal_pos = rospy.get_param('/ur3/goal_pos')
+
+        self.position_delta = rospy.get_param('/ur3/position_delta')
+        self.reached_goal_reward = rospy.get_param('/ur3/reached_goal_reward')
+
         self.wait_time = rospy.get_param('/cartpole_v0/wait_time')
-        self.control_type = rospy.get_param('/cartpole_v0/control_type')
+        #self.control_type = rospy.get_param('/cartpole_v0/control_type')
 
     def _set_action(self, action):
 

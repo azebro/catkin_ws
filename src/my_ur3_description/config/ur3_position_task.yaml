@@ -23,4 +23,5 @@ ur3: #namespace
     position_delta: 0.1 # Increments/Decrements in the positions each action step
 
     reached_goal_reward: 100
+    wait_time: 2
 
