@@ -28,10 +28,22 @@ if __name__ == '__main__':
     rospy.loginfo ( "Start!")
     rospy.init_node('ur3_gym_learn', anonymous=True, log_level=rospy.INFO)
 
+    # Loads parameters from the ROS param server
+    # Parameters are stored in a yaml file inside the config directory
+    # They are loaded at runtime by the launch file
+    Alpha = rospy.get_param("/ur3/alpha")
+    Epsilon = rospy.get_param("/ur3/epsilon")
+    Gamma = rospy.get_param("/ur3/gamma")
+    epsilon_discount = rospy.get_param("/ur3/epsilon_discount")
+    nepisodes = rospy.get_param("/ur3/nepisodes")
+    nsteps = rospy.get_param("/ur3/nsteps")
+
+    running_step = rospy.get_param("/ur3/running_step")
+
     # Create the Gym environment
     
     env = StartOpenAI_ROS_Environment('ur3-v0')
-    env._max_episode_steps = 10
+    env._max_episode_steps = nsteps
     rospy.loginfo ( "UR3 environment done")
     rospy.loginfo("Starting Learning")
 
@@ -45,17 +57,7 @@ if __name__ == '__main__':
 
     last_time_steps = numpy.ndarray(0)
 
-    # Loads parameters from the ROS param server
-    # Parameters are stored in a yaml file inside the config directory
-    # They are loaded at runtime by the launch file
-    Alpha = rospy.get_param("/ur3/alpha")
-    Epsilon = rospy.get_param("/ur3/epsilon")
-    Gamma = rospy.get_param("/ur3/gamma")
-    epsilon_discount = rospy.get_param("/ur3/epsilon_discount")
-    nepisodes = rospy.get_param("/ur3/nepisodes")
-    nsteps = rospy.get_param("/ur3/nsteps")
-
-    running_step = rospy.get_param("/ur3/running_step")
+    
 
     # Initialises the algorithm that we are going to use for learning
     qlearn = qlearn.QLearn(actions=range(env.action_space.n),
@@ -119,8 +121,7 @@ if __name__ == '__main__':
                 break
             rospy.logdebug("############### END Step=>" + str(i))
             #raw_input("Next Step...PRESS KEY")
-            #rospy.sleep(2.0)
-        env.initial_position()
+       
         m, s = divmod(int(time.time() - start_time), 60)
         h, m = divmod(m, 60)
         rospy.logdebug ( ("EP: "+str(x+1)+" - [alpha: "+str(round(qlearn.alpha,2))+" - gamma: "+str(round(qlearn.gamma,2))+" - epsilon: "+str(round(qlearn.epsilon,2))+"] - Reward: "+str(cumulated_reward)+"     Time: %d:%02d:%02d" % (h, m, s)))
