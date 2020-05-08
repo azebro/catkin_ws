@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-
+from  robot_envs import UR3Env
 from gym import utils
 #from my_ur3_description.robot_envs import ur3_env
 from gym.envs.registration import register
