@@ -44,7 +44,7 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
         """
         # Launch the robot
         ROSLauncher(rospackage_name="my_ur3_description",
-                    launch_file_name="my_ur3_description",
+                    launch_file_name="ur3.launch",
                     ros_ws_abspath=ros_ws_abspath)
 
         
@@ -52,14 +52,19 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
         self.publishers_array = []
         self._shoulder_pan_pub = rospy.Publisher(
             '/ur3/shoulder_pan_joint_position_controller/command', Float64, queue_size=1)
+        self.publishers_array.append(self._shoulder_pan_pub)
         self._shoulder_lift_pub = rospy.Publisher(
             '/ur3/shoulder_lift_joint_position_controller/command', Float64, queue_size=1)
+        self.publishers_array.append(self._shoulder_lift_pub)
         self._elbow_pub = rospy.Publisher(
             '/ur3/elbow_joint_position_controller/command', Float64, queue_size=1)
+        self.publishers_array.append(self._elbow_pub)
         self._wrist1_pub = rospy.Publisher(
             '/ur3/wrist_1_joint_position_controller/command', Float64, queue_size=1)
+        self.publishers_array.append(self._wrist1_pub)
         self._wrist2_pub = rospy.Publisher(
             '/ur3/wrist_2_joint_position_controller/command', Float64, queue_size=1)
+        self.publishers_array.append(self._wrist2_pub)
         self._wrist3_pub = rospy.Publisher(
             '/ur3/wrist_3_joint_position_controller/command', Float64, queue_size=1)
         
@@ -127,7 +132,7 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
         rospy.logdebug("_base_pub Publisher Connected")
 
         #TODO: check all others
-        while (self._shoulder_pan_pub.get_num_connections() == 0 and not rospy.is_shutdown()):
+        while (self._shoulder_lift_pub.get_num_connections() == 0 and not rospy.is_shutdown()):
             rospy.logdebug(
                 "No susbribers to _pole_pub yet so we wait and try again")
             try:
@@ -141,18 +146,19 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
 
 
     def _check_all_systems_ready(self, init=True):
-        self.base_position = None
-        while self.base_position is None and not rospy.is_shutdown():
+        self.joints_position = None
+        while self.joints_position is None and not rospy.is_shutdown():
             try:
-                self.base_position = rospy.wait_for_message(
-                    "/ur3/joint_states", JointState, timeout=1.0)
+                self.joints_position = rospy.wait_for_message(
+                    "/ur3/joint_states", JointState, timeout=1.0) 
+
                 rospy.logdebug(
-                    "Current ur3/joint_states READY=>"+str(self.base_position))
+                    "Current ur3/joint_states READY=>"+str(self.joints_position))
                 if init:
                     # We Check all the sensors are in their initial values
                     positions_ok = all(
                         #TODO: change to all joints
-                        abs(i) <= 1.0e-02 for i in self.base_position.position)
+                        abs(i) <= 1.0e-02 for i in self.joints_position.position)
                     
                     base_data_ok = positions_ok
                     rospy.logdebug(
@@ -163,11 +169,13 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
         rospy.logdebug("ALL SYSTEMS READY")
     
     def move_joints(self, joints_array):
-        joint_value = Float64()
-        joint_value.data = joints_array[0]
-        rospy.logdebug("Single Base JointsPos>>"+str(joint_value))
-        #TODO: all joints
-        self._shoulder_pan_pub.publish(joint_value)
+        for i in range(len(joints_array)):
+
+            joint_value = Float64()
+            joint_value.data = joints_array[i]
+            rospy.logdebug("Move {} to {}.".format(self.controllers_list[i], str(joint_value)))
+            #TODO: all joints
+            self.publishers_array[i](joint_value)
 
     def get_clock_time(self):
         self.clock_time = None
