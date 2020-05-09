@@ -63,7 +63,7 @@ if __name__ == '__main__':
     
 
     last_time_steps = numpy.ndarray(0)
-    n_bins = 2000
+    n_bins = 1000
     
     #number_of_features = env.observation_space.shape[0]
     number_of_features = 6
@@ -113,7 +113,7 @@ if __name__ == '__main__':
             if elbow_obs > 1.49 or elbow_obs < -1 or shoulder_lift_obs < -1 or shoulder_lift_obs > 1 or shoulder_pan_obs < -1 or shoulder_pan_obs > 1.49:
                 rospy.loginfo("Boundary hit, Exiting")
                 env.stats_recorder.done = True
-                break;
+                break
 
             nextState = build_state([to_bin(elbow_obs, elbow_bins),
                         to_bin(shoulder_lift_obs, shoulder_lift_bins),
