@@ -86,7 +86,7 @@ if __name__ == '__main__':
 
         # Show on screen the actual situation of the robot
         # for each episode, we test the robot for nsteps
-        
+        env.step(10)
         for i in range(nsteps -1):
             rospy.loginfo("############### Start Step=>"+str(i))
             # Pick an action based on the current state
@@ -121,7 +121,8 @@ if __name__ == '__main__':
                 break
             rospy.logdebug("############### END Step=>" + str(i))
             #raw_input("Next Step...PRESS KEY")
-        env.step(10)
+        #if not(done):
+            #env.step(10)
        
         m, s = divmod(int(time.time() - start_time), 60)
         h, m = divmod(m, 60)
