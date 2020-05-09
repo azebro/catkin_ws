@@ -1,11 +1,40 @@
+'''
+Deep Q-learning approach to the cartpole problem
+using OpenAI's gym environment.
+
+As part of the basic series on reinforcement learning @
+https://github.com/vmayoral/basic_reinforcement_learning
+
+This code implements the algorithm described at:
+Mnih, V., Kavukcuoglu, K., Silver, D., Rusu, A. A., Veness, J., Bellemare, M. G., ... & Petersen, 
+S. (2015). Human-level control through deep reinforcement learning. Nature, 518(7540), 529-533.
+
+Code based on @wingedsheep's work at https://gist.github.com/wingedsheep/4199594b02138dd427c22a540d6d6b8d
+
+        @author: Victor Mayoral Vilches <victor@erlerobotics.com>
+'''
+
+import gym
+import random
+import numpy as np
+from keras.models import Sequential
+from keras import optimizers
+from keras.layers.core import Dense, Dropout, Activation
+from keras.layers.normalization import BatchNormalization
+from keras.layers.advanced_activations import LeakyReLU
+from keras.regularizers import l2
+import memory
+
 class DeepQ:
     """
     DQN abstraction.
+
     As a quick reminder:
         traditional Q-learning:
             Q(s, a) += alpha * (reward(s,a) + gamma * max(Q(s') - Q(s,a))
         DQN:
             target = reward(s,a) + gamma * max(Q(s')
+
     """
     def __init__(self, inputs, outputs, memorySize, discountFactor, learningRate, learnStart):
         """
@@ -19,7 +48,7 @@ class DeepQ:
         """
         self.input_size = inputs
         self.output_size = outputs
-        self.memory = Memory(memorySize)
+        self.memory = memory.Memory(memorySize)
         self.discountFactor = discountFactor
         self.learnStart = learnStart
         self.learningRate = learningRate
