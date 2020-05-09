@@ -166,7 +166,8 @@ class UR3EnvTask(ur3_env.UR3Env):
         delta = data - goal
         reward = 1/ np.sqrt(np.sum(np.square(delta)))
         if done:
-            reward += 100
+            #change to a value as per assignment
+            reward += 500
             rospy.loginfo("Done Reward: {}".format(reward))
 
         rospy.logdebug("END _compute_reward")
