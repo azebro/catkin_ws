@@ -67,8 +67,11 @@ if __name__ == '__main__':
     
     #number_of_features = env.observation_space.shape[0]
     number_of_features = 6
+    bin_boundary = math.pi /2
+    
 
-    shoulder_pan_bins = pandas.cut([-1.4, 1.5], bins=n_bins, retbins=True)[1][1:-1]
+
+    shoulder_pan_bins = pandas.cut([-1.4, 1.57], bins=n_bins, retbins=True)[1][1:-1]
     shoulder_lift_bins = pandas.cut([-1, 1], bins=n_bins, retbins=True)[1][1:-1]
     elbow_bins = pandas.cut([-1, 1.50], bins=n_bins, retbins=True)[1][1:-1]
     
@@ -103,6 +106,7 @@ if __name__ == '__main__':
         # for each episode, we test the robot for nsteps
         env.step(10)
         for i in range(nsteps -1):
+            exit_flag = False
             rospy.loginfo("############### Start Step=>"+str(i))
             # Pick an action based on the current state
             action = qlearn.chooseAction(state)
@@ -110,10 +114,11 @@ if __name__ == '__main__':
             # Execute the action in the environment and get feedback
             observation, reward, done, info = env.step(action)
             elbow_obs, shoulder_lift_obs, shoulder_pan_obs = observation
-            if elbow_obs > 1.49 or elbow_obs < -1 or shoulder_lift_obs < -1 or shoulder_lift_obs > 1 or shoulder_pan_obs < -1 or shoulder_pan_obs > 1.49:
+            if elbow_obs > 1.49 or elbow_obs < -1 or shoulder_lift_obs < -1 or shoulder_lift_obs > 1 or shoulder_pan_obs < -1 or shoulder_pan_obs > 1.57:
                 rospy.loginfo("Boundary hit, Exiting")
-                env.stats_recorder.done = True
-                break
+                reward = -100
+                exit_flag =True
+                
 
             nextState = build_state([to_bin(elbow_obs, elbow_bins),
                         to_bin(shoulder_lift_obs, shoulder_lift_bins),
@@ -136,7 +141,9 @@ if __name__ == '__main__':
             rospy.loginfo("############### State in which we will start nect step=>" + str(nextState))
             qlearn.learn(state, action, reward, nextState)
 
-            
+            if exit_flag:
+                env.stats_recorder.done = True
+                break
 
             if not(done):
                 state = nextState

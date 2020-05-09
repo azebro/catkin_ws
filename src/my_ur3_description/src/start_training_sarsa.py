@@ -10,7 +10,7 @@ import time
 import numpy
 import random
 import time
-import qlearn
+import sarsa
 from gym import wrappers
 from gym.envs.registration import register
 from openai_ros.openai_ros_common import StartOpenAI_ROS_Environment
@@ -60,7 +60,7 @@ if __name__ == '__main__':
     
 
     # Initialises the algorithm that we are going to use for learning
-    qlearn = qlearn.QLearn(actions=range(env.action_space.n),
+    qlearn = sarsa.Sarsa(actions=range(env.action_space.n),
                     alpha=Alpha, gamma=Gamma, epsilon=Epsilon)
     initial_epsilon = qlearn.epsilon
 
@@ -100,13 +100,14 @@ if __name__ == '__main__':
                 highest_reward = cumulated_reward
 
             nextState = ''.join(map(str, observation))
+            action2 = qlearn.chooseAction(nextState)
 
             # Make the algorithm learn based on the results
             rospy.loginfo("############### state we were=>" + str(state))
             rospy.loginfo("############### action that we took=>" + str(action))
             rospy.loginfo("############### reward that action gave=>" + str(reward))
             rospy.loginfo("############### State in which we will start nect step=>" + str(nextState))
-            qlearn.learn(state, action, reward, nextState)
+            qlearn.learn(state, action, reward, nextState, action2)
 
             
 

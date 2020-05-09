@@ -47,4 +47,3 @@ class Sarsa:
     def learn(self, state1, action1, reward, state2, action2):
         qnext = self.getQ(state2, action2)
         self.learnQ(state1, action1, reward, reward + self.gamma * qnext)
-© 2020 GitHub, Inc.
