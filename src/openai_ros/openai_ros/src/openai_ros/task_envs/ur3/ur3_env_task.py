@@ -38,20 +38,13 @@ class UR3EnvTask(ur3_env.UR3Env):
 
         self.action_space = spaces.Discrete(self.n_actions)
 
-        high = np.array([2.5 * 2, np.finfo(np.float32).max, 0.7 * 2, np.finfo(np.float32).max])
-        self.observation_space = spaces.Box(-high, high)
+        low = np.array([-np.pi, -np.pi, -np.pi])
+        high = np.array([np.pi, np.pi, np.pi])
+        self.observation_space = spaces.Box(low, high)
 
-        # TODO: Remove when working
-        """
-        cartpole_env.CartPoleEnv.__init__(
-            self, control_type=self.control_type
-        )
-        """
-
-        # Here we will add any init functions prior to starting the MyRobotEnv
-        #super(CartPoleStayUpEnv, self).__init__(control_type=self.control_type,
-        #                                        ros_ws_abspath=ros_ws_abspath)
-        # 
+        self.tolerance = 0.2
+        self.iteration = 0
+        
         
         super(UR3EnvTask, self).__init__(ros_ws_abspath=ros_ws_abspath)
         self._set_init_pose()
@@ -157,18 +150,22 @@ class UR3EnvTask(ur3_env.UR3Env):
 
         
 
-        rospy.loginfo("Elbow: "+str(observations[0]))
-        rospy.loginfo("Base Lift: " + str(observations[2]))
-        rospy.loginfo("Base Pan: " + str(observations[1]))
+        rospy.logdebug("Elbow: "+str(observations[0]))
+        rospy.logdebug("Base Lift: " + str(observations[2]))
+        rospy.logdebug("Base Pan: " + str(observations[1]))
         # check if the base is still within the ranges of (-2, 2)
+        if ((abs(self.gloal_pos["elbow_joint"] - observations[0]) <= self.tolerance) and 
+            abs(self.gloal_pos["shoulder_lift_joint"] - observations[1]) <= self.tolerance and 
+            abs(self.gloal_pos["shoulder_pan_joint"] - observations[2]) <= self.tolerance):
+            '''
 
         if (self.gloal_pos["elbow_joint"] + 0.2 >= observations[0] >= self.gloal_pos["elbow_joint"] - 0.2) \
             and (self.gloal_pos["shoulder_lift_joint"] + 0.2 >= observations[1] >= self.gloal_pos["shoulder_lift_joint"] - 0.2) \
             and (self.gloal_pos["shoulder_pan_joint"] + 0.2 >= observations[2] >= self.gloal_pos["shoulder_pan_joint"] - 0.2):
             rospy.loginfo("Done achieved")
+            '''
             done = True
-        
-               
+            self._set_action(10)
 
         return done
 
@@ -183,12 +180,10 @@ class UR3EnvTask(ur3_env.UR3Env):
         data = np.array(self.joints[0:3])
         goal = np.array([self.gloal_pos["elbow_joint"], self.gloal_pos["shoulder_lift_joint"], self.gloal_pos["shoulder_pan_joint"]])
         delta = data - goal
-        if not done:
-            reward = 1/ np.sqrt(np.sum(np.square(delta)))
-            rospy.loginfo("Reward: {}".format(reward))
-        
-        else:
-            reward = 100
+        reward = 1/ np.sqrt(np.sum(np.square(delta)))
+        if done:
+            reward += 100
+            rospy.loginfo("Done Reward: {}".format(reward))
 
         rospy.logdebug("END _compute_reward")
 
@@ -213,8 +208,8 @@ class UR3EnvTask(ur3_env.UR3Env):
         # Reset Internal pos variable
         self.init_internal_vars(self.init_pos)
         rospy.loginfo(self.pos)
-        self.move_joints(self.init_pos)
+        self.move_joints(self.pos)
         rospy.sleep(3)  # wait for some time
-        rospy.loginfo("moved")
+        #rospy.loginfo("moved")
 
    

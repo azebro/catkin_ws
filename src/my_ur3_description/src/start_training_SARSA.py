@@ -11,22 +11,15 @@ import numpy
 import random
 import time
 import qlearn
-import math
 from gym import wrappers
-#from gym.envs.registration import register
+from gym.envs.registration import register
 from openai_ros.openai_ros_common import StartOpenAI_ROS_Environment
-import pandas
 
 
 # ROS packages required
 import rospy
 import rospkg
 
-def build_state(features):
-    return int("".join(map(lambda feature: str(int(feature)), features)))
-
-def to_bin(value, bins):
-    return numpy.digitize(x=[value], bins=bins)[0]
 
 
 
@@ -63,14 +56,7 @@ if __name__ == '__main__':
     
 
     last_time_steps = numpy.ndarray(0)
-    n_bins = 2000
-    
-    #number_of_features = env.observation_space.shape[0]
-    number_of_features = 6
 
-    shoulder_pane_bins = pandas.cut([-2.40, 2.40], bins=n_bins, retbins=True)[1][1:-1]
-    shoulder_lift_bins = pandas.cut([-math.pi / 2, math.pi / 2], bins=n_bins, retbins=True)[1][1:-1]
-    elbow_bins = pandas.cut([-1.50, 1.50], bins=n_bins, retbins=True)[1][1:-1]
     
 
     # Initialises the algorithm that we are going to use for learning
@@ -97,7 +83,6 @@ if __name__ == '__main__':
         
         rospy.loginfo ( "Environment Reset")
         state = ''.join(map(str, observation))
-        
 
         # Show on screen the actual situation of the robot
         # for each episode, we test the robot for nsteps
@@ -109,20 +94,12 @@ if __name__ == '__main__':
             rospy.loginfo ("Next action is:%d", action)
             # Execute the action in the environment and get feedback
             observation, reward, done, info = env.step(action)
-            elbow_obs, shoulder_lift_obs, shoulder_pane_obs = observation
-            nextState = build_state([to_bin(elbow_obs, elbow_bins),
-                        to_bin(shoulder_lift_obs, shoulder_lift_bins),
-                        to_bin(shoulder_pane_obs, shoulder_pane_bins)])
-            rospy.loginfo(nextState)
-            
-
-
             rospy.logdebug(str(observation) + " " + str(reward))
             cumulated_reward += reward
             if highest_reward < cumulated_reward:
                 highest_reward = cumulated_reward
 
-            #nextState = ''.join(map(str, observation))
+            nextState = ''.join(map(str, observation))
 
             # Make the algorithm learn based on the results
             rospy.loginfo("############### state we were=>" + str(state))

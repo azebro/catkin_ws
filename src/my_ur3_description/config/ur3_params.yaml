@@ -2,15 +2,7 @@ ur3: #namespace
     ros_ws_abspath: "/home/adam/catkin_ws"
 
     n_actions: 6
-    control_type: "position"
-
-    #environment variables
-    min_pole_angle: -0.7 #-23°
-    max_pole_angle: 0.7 #23°
-    
-    max_base_velocity: 50
-    max_base_pose_x: 2.0
-    min_base_pose_x: -2.0
+   
     
     # those parameters are very important. They are affecting the learning experience
     # They indicate how fast the control can be
@@ -20,9 +12,14 @@ ur3: #namespace
     pos_step: 0.016     # increment in position for each command
     
     #qlearn parameters
-    alpha: 0.2
+    alpha: 0.5
     gamma: 0.9
     epsilon: 0.1
+
+    #alpha: 0.2
+    #gamma: 0.9
+    #epsilon: 0.1
+    
     #alpha: 0.1
     #amma: 0.7
     #epsilon: 0.9
