@@ -38,7 +38,7 @@ if __name__ == '__main__':
     nepisodes = rospy.get_param("/ur3/nepisodes")
     nsteps = rospy.get_param("/ur3/nsteps")
 
-    running_step = rospy.get_param("/ur3/running_step")
+    #running_step = rospy.get_param("/ur3/running_step")
 
     # Create the Gym environment
     
