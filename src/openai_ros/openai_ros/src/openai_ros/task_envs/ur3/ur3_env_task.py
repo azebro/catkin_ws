@@ -67,6 +67,8 @@ class UR3EnvTask(ur3_env.UR3Env):
         self.wait_time = rospy.get_param('/ur3/wait_time')
         self.position_delta = rospy.get_param('/ur3/position_delta')
         self.running_time = rospy.get_param('/ur3/running_time')
+
+        self.bounds = [[-1.5, 1.5]]
     
     def initial_position(self):
         self._set_init_pose()
@@ -96,13 +98,17 @@ class UR3EnvTask(ur3_env.UR3Env):
         #self.iteration += 1
 
         if action == 0:  # elbow -
-            self.pos["elbow_joint"] -= self.position_delta
+            if self.pos["elbow_joint"] > -1.5:
+                self.pos["elbow_joint"] -= self.position_delta
         elif action == 1:  # elbow +
-            self.pos["elbow_joint"] += self.position_delta
+            if self.pos["elbow_joint"] < 1.5:
+                self.pos["elbow_joint"] += self.position_delta
         elif action == 2:  # shoulder_lift -
-            self.pos["shoulder_lift_joint"] -= self.position_delta
+            if self.pos["shoulder_lift_joint"] > -1.5:
+                self.pos["shoulder_lift_joint"] -= self.position_delta
         elif action == 3:  # shoulder_lift -
-            self.pos["shoulder_lift_joint"] += self.position_delta
+             if self.pos["shoulder_lift_joint"] < 1.5:
+                self.pos["shoulder_lift_joint"] += self.position_delta
         elif action == 4:  # shoulder_pan -
             self.pos["shoulder_pan_joint"] -= self.position_delta
         elif action == 5:  # shoulder_pan +

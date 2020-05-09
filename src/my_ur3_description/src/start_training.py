@@ -68,9 +68,9 @@ if __name__ == '__main__':
     #number_of_features = env.observation_space.shape[0]
     number_of_features = 6
 
-    shoulder_pane_bins = pandas.cut([-2.40, 2.40], bins=n_bins, retbins=True)[1][1:-1]
-    shoulder_lift_bins = pandas.cut([-math.pi / 2, math.pi / 2], bins=n_bins, retbins=True)[1][1:-1]
-    elbow_bins = pandas.cut([-1.50, 1.50], bins=n_bins, retbins=True)[1][1:-1]
+    shoulder_pan_bins = pandas.cut([-1.4, 1.5], bins=n_bins, retbins=True)[1][1:-1]
+    shoulder_lift_bins = pandas.cut([-1, 1], bins=n_bins, retbins=True)[1][1:-1]
+    elbow_bins = pandas.cut([-1, 1.50], bins=n_bins, retbins=True)[1][1:-1]
     
 
     # Initialises the algorithm that we are going to use for learning
@@ -109,10 +109,15 @@ if __name__ == '__main__':
             rospy.loginfo ("Next action is:%d", action)
             # Execute the action in the environment and get feedback
             observation, reward, done, info = env.step(action)
-            elbow_obs, shoulder_lift_obs, shoulder_pane_obs = observation
+            elbow_obs, shoulder_lift_obs, shoulder_pan_obs = observation
+            if elbow_obs > 1.49 or elbow_obs < -1 or shoulder_lift_obs < -1 or shoulder_lift_obs > 1 or shoulder_pan_obs < -1 or shoulder_pan_obs > 1.49:
+                rospy.loginfo("Boundary hit, Exiting")
+                env.stats_recorder.done = True
+                break;
+
             nextState = build_state([to_bin(elbow_obs, elbow_bins),
                         to_bin(shoulder_lift_obs, shoulder_lift_bins),
-                        to_bin(shoulder_pane_obs, shoulder_pane_bins)])
+                        to_bin(shoulder_pan_obs, shoulder_pan_bins)])
             rospy.loginfo(nextState)
             
 

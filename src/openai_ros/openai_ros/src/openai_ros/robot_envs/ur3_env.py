@@ -124,7 +124,7 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
     def _env_setup(self, initial_qpos):
         self.init_internal_vars(self.init_pos)
         self.set_init_pose()
-        self.check_all_systems_ready_check_all_systems_ready()
+        self.check_all_systems_ready()
 
     def init_internal_vars(self, init_pos_value):
         self.pos = init_pos_value
