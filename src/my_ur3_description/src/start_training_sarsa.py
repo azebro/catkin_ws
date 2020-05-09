@@ -25,7 +25,8 @@ import rospkg
 
 if __name__ == '__main__':
 
-    random.seed(30000000)
+    #random.seed(1000)
+    random.seed(10000000)
 
     rospy.loginfo ( "Start!")
     rospy.init_node('ur3_gym_learn', anonymous=True, log_level=rospy.INFO)
@@ -74,6 +75,7 @@ if __name__ == '__main__':
     # Starts the main training loop: the one about the episodes to do
     for x in range(nepisodes):
         rospy.loginfo("EPISODE=>" + str(x))
+        action = None
 
         cumulated_reward = 0
         done = False
@@ -93,7 +95,8 @@ if __name__ == '__main__':
         for i in range(nsteps -1):
             rospy.loginfo("############### Start Step=>"+str(i))
             # Pick an action based on the current state
-            action = qlearn.chooseAction(state)
+            if action is None:
+                action = qlearn.chooseAction(state)
             rospy.loginfo ("Next action is:%d", action)
             # Execute the action in the environment and get feedback
             observation, reward, done, info = env.step(action)
@@ -116,6 +119,7 @@ if __name__ == '__main__':
 
             if not(done):
                 state = nextState
+                action = action2
                 if i == nsteps -1:
                     rospy.loginfo("Exiting")
                     break
@@ -125,8 +129,7 @@ if __name__ == '__main__':
                 break
             rospy.logdebug("############### END Step=>" + str(i))
             #raw_input("Next Step...PRESS KEY")
-        #if not(done):
-            #env.step(10)
+       
         env.stats_recorder.done = True
         m, s = divmod(int(time.time() - start_time), 60)
         h, m = divmod(m, 60)

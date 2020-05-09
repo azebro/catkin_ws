@@ -10,7 +10,8 @@ import time
 import numpy
 import random
 import time
-import sarsa
+import memory
+import dqn
 from gym import wrappers
 from gym.envs.registration import register
 from openai_ros.openai_ros_common import StartOpenAI_ROS_Environment
@@ -60,25 +61,39 @@ if __name__ == '__main__':
 
     last_time_steps = numpy.ndarray(0)
 
+    epochs = 1000
+    steps = 100000
+    updateTargetNetwork = 10000
+    explorationRate = 1
+    minibatch_size = 128
+    learnStart = 128
+    learningRate = 0.00025
+    discountFactor = 0.99
+    memorySize = 1000000
+
+    last100Scores = [0] * 100
+    last100ScoresIndex = 0
+    last100Filled = False
+
+    deepQ = DeepQ(4, 2, memorySize, discountFactor, learningRate, learnStart)
+    # deepQ.initNetworks([30,30,30])
+    # deepQ.initNetworks([30,30])
+    deepQ.initNetworks([300,300])
+
     
 
-    # Initialises the algorithm that we are going to use for learning
-    qlearn = sarsa.Sarsa(actions=range(env.action_space.n),
-                    alpha=Alpha, gamma=Gamma, epsilon=Epsilon)
-    initial_epsilon = qlearn.epsilon
-
+    
     start_time = time.time()
     highest_reward = 0
     rospy.loginfo ( "Q Learn Initated")
 
     # Starts the main training loop: the one about the episodes to do
-    for x in range(nepisodes):
+    for x in range(epochs):
         rospy.loginfo("EPISODE=>" + str(x))
 
         cumulated_reward = 0
         done = False
-        if qlearn.epsilon > 0.05:
-            qlearn.epsilon *= epsilon_discount
+        
 
         # Initialize the environment and get first state of the robot
         
@@ -93,47 +108,57 @@ if __name__ == '__main__':
         for i in range(nsteps -1):
             rospy.loginfo("############### Start Step=>"+str(i))
             # Pick an action based on the current state
-            action = qlearn.chooseAction(state)
+            qValues = deepQ.getQValues(observation)
+            action = deepQ.selectAction(qValues, explorationRate)
+
+
+
+
+
+
+            
             rospy.loginfo ("Next action is:%d", action)
             # Execute the action in the environment and get feedback
-            observation, reward, done, info = env.step(action)
+            newObservation, reward, done, info = env.step(action)
+            deepQ.addMemory(observation, action, reward, newObservation, done)
+
+
+
             rospy.logdebug(str(observation) + " " + str(reward))
             cumulated_reward += reward
             if highest_reward < cumulated_reward:
                 highest_reward = cumulated_reward
 
             nextState = '-'.join(map(str, observation))
-            action2 = qlearn.chooseAction(nextState)
+            if stepCounter >= learnStart:
+                if stepCounter <= updateTargetNetwork:
+                    deepQ.learnOnMiniBatch(minibatch_size, False)
+                else :
+                    deepQ.learnOnMiniBatch(minibatch_size, True)
 
-            # Make the algorithm learn based on the results
-            rospy.loginfo("############### state we were=>" + str(state))
-            rospy.loginfo("############### action that we took=>" + str(action))
-            rospy.loginfo("############### reward that action gave=>" + str(reward))
-            rospy.loginfo("############### State in which we will start nect step=>" + str(nextState))
-            qlearn.learn(state, action, reward, nextState, action2)
-
-            
-
-            if not(done):
-                state = nextState
-                if i == nsteps -1:
-                    rospy.loginfo("Exiting")
-                    break
-            else:
-                rospy.logdebug ("DONE")
-                last_time_steps = numpy.append(last_time_steps, [int(i + 1)])
+            observation = newObservation
+            if done:
+                last100Scores[last100ScoresIndex] = t
+                last100ScoresIndex += 1
+                if last100ScoresIndex >= 100:
+                    last100Filled = True
+                    last100ScoresIndex = 0
+                if not last100Filled:
+                    print "Episode ",epoch," finished after {} timesteps".format(t+1)
+                else :
+                    print "Episode ",epoch," finished after {} timesteps".format(t+1)," last 100 average: ",(sum(last100Scores)/len(last100Scores))
                 break
-            rospy.logdebug("############### END Step=>" + str(i))
-            #raw_input("Next Step...PRESS KEY")
-        #if not(done):
-            #env.step(10)
+
+            stepCounter += 1
+            if stepCounter % updateTargetNetwork == 0:
+                deepQ.updateTargetNetwork()
+                print "updating target network"
+
         env.stats_recorder.done = True
-        m, s = divmod(int(time.time() - start_time), 60)
-        h, m = divmod(m, 60)
-        rospy.logdebug ( ("EP: "+str(x+1)+" - [alpha: "+str(round(qlearn.alpha,2))+" - gamma: "+str(round(qlearn.gamma,2))+" - epsilon: "+str(round(qlearn.epsilon,2))+"] - Reward: "+str(cumulated_reward)+"     Time: %d:%02d:%02d" % (h, m, s)))
-
-
-    rospy.loginfo ( ("\n|"+str(nepisodes)+"|"+str(qlearn.alpha)+"|"+str(qlearn.gamma)+"|"+str(initial_epsilon)+"*"+str(epsilon_discount)+"|"+str(highest_reward)+"| PICTURE |"))
+        explorationRate *= 0.995
+        # explorationRate -= (2.0/epochs)
+        explorationRate = max (0.05, explorationRate)
+        rospy.loginfo ( ("\n|"+str(nepisodes)+"|"+str(qlearn.alpha)+"|"+str(qlearn.gamma)+"|"+str(initial_epsilon)+"*"+str(epsilon_discount)+"|"+str(highest_reward)+"| PICTURE |"))
 
     l = last_time_steps.tolist()
     l.sort()
