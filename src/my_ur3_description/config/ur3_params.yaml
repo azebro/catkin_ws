@@ -25,7 +25,7 @@ ur3: #namespace
     #epsilon: 0.9
     epsilon_discount: 0.999
     nepisodes: 500
-    nsteps: 5
+    nsteps: 500
     number_splits: 10 #set to change the number of state splits for the continuous problem and also the number of env_variable splits
 
     init_pos: 0.0 # Position in which the base will start
