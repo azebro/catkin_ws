@@ -31,6 +31,8 @@ def to_bin(value, bins):
 
 
 if __name__ == '__main__':
+    
+    random.seed(10000000)
 
     rospy.loginfo ( "Start!")
     rospy.init_node('ur3_gym_learn', anonymous=True, log_level=rospy.INFO)
@@ -63,7 +65,9 @@ if __name__ == '__main__':
     
 
     last_time_steps = numpy.ndarray(0)
-    n_bins = 1000
+
+    '''
+    n_bins = 2000
     
     #number_of_features = env.observation_space.shape[0]
     number_of_features = 6
@@ -74,7 +78,7 @@ if __name__ == '__main__':
     shoulder_pan_bins = pandas.cut([-1.4, 1.57], bins=n_bins, retbins=True)[1][1:-1]
     shoulder_lift_bins = pandas.cut([-1, 1], bins=n_bins, retbins=True)[1][1:-1]
     elbow_bins = pandas.cut([-1, 1.50], bins=n_bins, retbins=True)[1][1:-1]
-    
+    '''
 
     # Initialises the algorithm that we are going to use for learning
     qlearn = qlearn.QLearn(actions=range(env.action_space.n),
@@ -114,16 +118,22 @@ if __name__ == '__main__':
             # Execute the action in the environment and get feedback
             observation, reward, done, info = env.step(action)
             elbow_obs, shoulder_lift_obs, shoulder_pan_obs = observation
-            if elbow_obs > 1.49 or elbow_obs < -1 or shoulder_lift_obs < -1 or shoulder_lift_obs > 1 or shoulder_pan_obs < -1 or shoulder_pan_obs > 1.57:
+
+            '''
+            if elbow_obs > 1.3 or elbow_obs < -0.3 or shoulder_lift_obs < -0.4 or shoulder_lift_obs > 0.5 or shoulder_pan_obs < -1 or shoulder_pan_obs > 1.57:
                 rospy.loginfo("Boundary hit, Exiting")
                 reward = -100
                 exit_flag =True
+            '''
+
+            '''
                 
 
             nextState = build_state([to_bin(elbow_obs, elbow_bins),
                         to_bin(shoulder_lift_obs, shoulder_lift_bins),
                         to_bin(shoulder_pan_obs, shoulder_pan_bins)])
             rospy.loginfo(nextState)
+            '''
             
 
 
@@ -132,7 +142,8 @@ if __name__ == '__main__':
             if highest_reward < cumulated_reward:
                 highest_reward = cumulated_reward
 
-            #nextState = ''.join(map(str, observation))
+            nextState = '-'.join(map(str, observation))
+            rospy.loginfo(nextState)
 
             # Make the algorithm learn based on the results
             rospy.loginfo("############### state we were=>" + str(state))

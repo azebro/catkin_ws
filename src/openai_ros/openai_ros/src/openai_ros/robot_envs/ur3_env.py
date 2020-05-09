@@ -94,7 +94,7 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
         self.robot_name_space = "ur3"
         self.reset_controls = True
         # Seed the environment
-        self._seed()
+        #self._seed(0)
         self.steps_beyond_done = None
 
         super(UR3Env, self).__init__(controllers_list=self.controllers_list,

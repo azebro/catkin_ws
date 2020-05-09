@@ -99,7 +99,7 @@ if __name__ == '__main__':
             if highest_reward < cumulated_reward:
                 highest_reward = cumulated_reward
 
-            nextState = ''.join(map(str, observation))
+            nextState = '-'.join(map(str, observation))
             action2 = qlearn.chooseAction(nextState)
 
             # Make the algorithm learn based on the results
