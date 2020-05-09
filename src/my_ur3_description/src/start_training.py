@@ -169,6 +169,7 @@ if __name__ == '__main__':
             #raw_input("Next Step...PRESS KEY")
         #if not(done):
             #env.step(10)
+        env.stats_recorder.done = True
        
         m, s = divmod(int(time.time() - start_time), 60)
         h, m = divmod(m, 60)
