@@ -124,7 +124,7 @@ if __name__ == '__main__':
             #raw_input("Next Step...PRESS KEY")
         #if not(done):
             #env.step(10)
-       
+        env.stats_recorder.done = True
         m, s = divmod(int(time.time() - start_time), 60)
         h, m = divmod(m, 60)
         rospy.logdebug ( ("EP: "+str(x+1)+" - [alpha: "+str(round(qlearn.alpha,2))+" - gamma: "+str(round(qlearn.gamma,2))+" - epsilon: "+str(round(qlearn.epsilon,2))+"] - Reward: "+str(cumulated_reward)+"     Time: %d:%02d:%02d" % (h, m, s)))

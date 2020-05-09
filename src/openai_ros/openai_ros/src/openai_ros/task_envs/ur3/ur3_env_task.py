@@ -79,36 +79,14 @@ class UR3EnvTask(ur3_env.UR3Env):
 
     def _set_action(self, action):
 
-        # Take action
-        '''
-        if action == 0:  # LEFT
-            rospy.loginfo("GO LEFT...")
-            self.pos[0] -= self.pos_step
-        elif action == 1:  # RIGHT
-            rospy.loginfo("GO RIGHT...")
-            self.pos[0] += self.pos_step
-        elif action == 2:  # LEFT BIG
-            rospy.loginfo("GO LEFT BIG...")
-            self.pos[0] -= self.pos_step * 10
-        elif action == 3:  # RIGHT BIG
-            rospy.loginfo("GO RIGHT BIG...")
-            self.pos[0] += self.pos_step * 10
-        '''
-
-        #self.iteration += 1
-
         if action == 0:  # elbow -
-            if self.pos["elbow_joint"] > -1.5:
-                self.pos["elbow_joint"] -= self.position_delta
+            self.pos["elbow_joint"] -= self.position_delta
         elif action == 1:  # elbow +
-            if self.pos["elbow_joint"] < 1.5:
-                self.pos["elbow_joint"] += self.position_delta
+            self.pos["elbow_joint"] += self.position_delta
         elif action == 2:  # shoulder_lift -
-            if self.pos["shoulder_lift_joint"] > -1.5:
-                self.pos["shoulder_lift_joint"] -= self.position_delta
+            self.pos["shoulder_lift_joint"] -= self.position_delta
         elif action == 3:  # shoulder_lift -
-             if self.pos["shoulder_lift_joint"] < 1.5:
-                self.pos["shoulder_lift_joint"] += self.position_delta
+            self.pos["shoulder_lift_joint"] += self.position_delta
         elif action == 4:  # shoulder_pan -
             self.pos["shoulder_pan_joint"] -= self.position_delta
         elif action == 5:  # shoulder_pan +
