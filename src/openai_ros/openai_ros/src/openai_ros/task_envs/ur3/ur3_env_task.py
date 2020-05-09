@@ -102,14 +102,14 @@ class UR3EnvTask(ur3_env.UR3Env):
 
         #self.iteration += 1
 
-        if action == 0:  # elbow +
-            self.pos["elbow_joint"] += self.position_delta
-        elif action == 1:  # elbow -
+        if action == 0:  # elbow -
             self.pos["elbow_joint"] -= self.position_delta
+        elif action == 1:  # elbow +
+            self.pos["elbow_joint"] += self.position_delta
         elif action == 2:  # shoulder_lift -
-            self.pos["shoulder_lift_joint"] += self.position_delta
-        elif action == 3:  # shoulder_lift -
             self.pos["shoulder_lift_joint"] -= self.position_delta
+        elif action == 3:  # shoulder_lift -
+            self.pos["shoulder_lift_joint"] += self.position_delta
         elif action == 4:  # shoulder_pan -
             self.pos["shoulder_pan_joint"] -= self.position_delta
         elif action == 5:  # shoulder_pan +

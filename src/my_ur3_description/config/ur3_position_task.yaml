@@ -24,5 +24,5 @@ ur3: #namespace
 
     reached_goal_reward: 100
     wait_time: 2
-    running_time: 0.04
+    running_time: 0.1
 

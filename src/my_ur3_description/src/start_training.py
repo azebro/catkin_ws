@@ -38,7 +38,7 @@ if __name__ == '__main__':
     nepisodes = rospy.get_param("/ur3/nepisodes")
     nsteps = rospy.get_param("/ur3/nsteps")
 
-    #running_step = rospy.get_param("/ur3/running_step")
+    running_step = rospy.get_param("/ur3/running_step")
 
     # Create the Gym environment
     
@@ -102,10 +102,10 @@ if __name__ == '__main__':
             nextState = ''.join(map(str, observation))
 
             # Make the algorithm learn based on the results
-            rospy.loginfo("############### state we were=>" + str(state))
-            rospy.loginfo("############### action that we took=>" + str(action))
-            rospy.loginfo("############### reward that action gave=>" + str(reward))
-            rospy.loginfo("############### State in which we will start nect step=>" + str(nextState))
+            rospy.logdebug("############### state we were=>" + str(state))
+            rospy.logdebug("############### action that we took=>" + str(action))
+            rospy.logdebug("############### reward that action gave=>" + str(reward))
+            rospy.logdebug("############### State in which we will start nect step=>" + str(nextState))
             qlearn.learn(state, action, reward, nextState)
 
             
@@ -119,7 +119,7 @@ if __name__ == '__main__':
                 rospy.logdebug ("DONE")
                 last_time_steps = numpy.append(last_time_steps, [int(i + 1)])
                 break
-            rospy.loginfo("############### END Step=>" + str(i))
+            rospy.logdebug("############### END Step=>" + str(i))
             #raw_input("Next Step...PRESS KEY")
         env.step(10)
        
