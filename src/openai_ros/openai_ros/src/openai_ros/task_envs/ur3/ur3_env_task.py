@@ -44,7 +44,7 @@ class UR3EnvTask(ur3_env.UR3Env):
 
         self.tolerance = 0.2
         self.iteration = 0
-        
+        self.num_envs = 1
         
         super(UR3EnvTask, self).__init__(ros_ws_abspath=ros_ws_abspath)
         self._set_init_pose()
