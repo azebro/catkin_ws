@@ -122,8 +122,8 @@ class UR3EnvTask(ur3_env.UR3Env):
 
         data = self.joints[0:3]
         #rospy.logerr(data)
-        
-        return np.round(np.array(data), 4)
+        #TODO: temp change for testing
+        return np.round(np.array(data), 3)
 
 
 
