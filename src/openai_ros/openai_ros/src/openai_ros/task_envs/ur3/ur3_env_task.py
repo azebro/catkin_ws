@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from openai_ros.robot_envs import ur3_env
 from gym import utils
@@ -23,11 +23,6 @@ class UR3EnvTask(ur3_env.UR3Env):
                                                " DOESNT exist, execute: mkdir -p " + ros_ws_abspath + \
                                                "/src;cd " + ros_ws_abspath + ";catkin_make"
         
-        '''
-        ROSLauncher(rospackage_name="my_ur3_description",
-                    launch_file_name="ur3.launch",
-                    ros_ws_abspath=ros_ws_abspath)
-        '''
 
         # Load Params from the desired Yaml file
         LoadYamlFileParamsTest(rospackage_name="my_ur3_description",
@@ -42,7 +37,7 @@ class UR3EnvTask(ur3_env.UR3Env):
         high = np.array([np.pi, np.pi, np.pi])
         self.observation_space = spaces.Box(low, high)
 
-        self.tolerance = 0.2
+        #self.tolerance = 0.2
         self.iteration = 0
         self.num_envs = 1
         
@@ -67,8 +62,7 @@ class UR3EnvTask(ur3_env.UR3Env):
         self.wait_time = rospy.get_param('/ur3/wait_time')
         self.position_delta = rospy.get_param('/ur3/position_delta')
         self.running_time = rospy.get_param('/ur3/running_time')
-
-        self.bounds = [[-1.5, 1.5]]
+        self.tolerance = rospy.get_param('/ur3/tolerance')
     
     def initial_position(self):
         self._set_init_pose()
@@ -76,7 +70,12 @@ class UR3EnvTask(ur3_env.UR3Env):
         
 
 
-
+    '''
+    Execute actions:
+        0-6: joint movements
+        10: move to starting position (0, 0, 0). THis is a workaround for not beging able 
+            to reset to initial pose via reset.
+    '''
     def _set_action(self, action):
 
         if action == 0:  # elbow -
@@ -92,82 +91,81 @@ class UR3EnvTask(ur3_env.UR3Env):
         elif action == 5:  # shoulder_pan +
             self.pos["shoulder_pan_joint"] += self.position_delta
         elif action == 10:
+            #Initial pose selected, move and exit
             self.pos["elbow_joint"] = 0.0
             self.pos["shoulder_lift_joint"] = 0.0
             self.pos["shoulder_pan_joint"] = 0.0
             rospy.sleep(self.wait_time) 
             return
+            
 
-        # Apply action to simulation.
         rospy.logdebug("MOVING TO POS=="+str(self.pos))
-
-        # 1st: unpause simulation
-        #rospy.logdebug("Unpause SIM...")
-        # self.gazebo.unpauseSim()
-
         self.move_joints(self.pos)
+
         rospy.logdebug(
             "Wait for some time to execute movement, time="+str(self.running_time))
         rospy.sleep(self.running_time)  # wait for some time
         rospy.logdebug(
             "DONE Wait for some time to execute movement, time=" + str(self.wait_time))
 
-        # 3rd: pause simulation
-        #rospy.logdebug("Pause SIM...")
-        # self.gazebo.pauseSim()
 
 
-    #TODO:  this has to be extended to joint readings
+    '''
+    Return observations.
+    To reduce state space I will round the position
+    Rounding too much results in bobot geting stuck in same movement pattern
+    Rounding too little, hinders learning as states are too many
+    I found that 3 is the optimal number to balance the state space.
+    The only downside is the for DQN it takes ~2000-3000 moves to find first goal
+    '''
     def _get_obs(self):
 
         data = self.joints[0:3]
-        #rospy.logerr(data)
-        #TODO: temp change for testing
         return np.round(np.array(data), 3)
 
 
-
+    #Am I done?
     def _is_done(self, observations):
         done = False
-
-        #data = self.joints
-
-        
 
         rospy.logdebug("Elbow: "+str(observations[0]))
         rospy.logdebug("Base Lift: " + str(observations[2]))
         rospy.logdebug("Base Pan: " + str(observations[1]))
-        # check if the base is still within the ranges of (-2, 2)
+
+        # Check f the joints are in the position that can be assumed goal:
+        # Goal position +- tolerance
         if ((abs(self.gloal_pos["elbow_joint"] - observations[0]) <= self.tolerance) and 
             abs(self.gloal_pos["shoulder_lift_joint"] - observations[1]) <= self.tolerance and 
             abs(self.gloal_pos["shoulder_pan_joint"] - observations[2]) <= self.tolerance):
-            '''
 
-        if (self.gloal_pos["elbow_joint"] + 0.2 >= observations[0] >= self.gloal_pos["elbow_joint"] - 0.2) \
-            and (self.gloal_pos["shoulder_lift_joint"] + 0.2 >= observations[1] >= self.gloal_pos["shoulder_lift_joint"] - 0.2) \
-            and (self.gloal_pos["shoulder_pan_joint"] + 0.2 >= observations[2] >= self.gloal_pos["shoulder_pan_joint"] - 0.2):
-            rospy.loginfo("Done achieved")
-            '''
+            #Set the done flag
             done = True
-            self._set_action(10)
+            
 
         return done
 
-    def _compute_reward(self, observations, done):
-        """
-        Gives more points for staying upright, gets data from given observations to avoid
-        having different data than other previous functions
-        :return:reward
-        """
-        rospy.logdebug("START _compute_reward")
+    """
+        Compute the reward for arm movement
+        The base calculation is The reward at each step is defined as follows:
+        r = 1/ sqrt(sum(d**2))
+        where d is difference in current and goal position for each joint
 
+    """
+    def _compute_reward(self, observations, done):
+        
+        rospy.logdebug("START _compute_reward")
+        #Current joint positions
         data = np.array(self.joints[0:3])
+        #The goal positions
         goal = np.array([self.gloal_pos["elbow_joint"], self.gloal_pos["shoulder_lift_joint"], self.gloal_pos["shoulder_pan_joint"]])
+        #Calculate difference
         delta = data - goal
+        #Perform the formula calculation
         reward = 1/ np.sqrt(np.sum(np.square(delta)))
+        #Add bonus reward if arm has reached the goal
         if done:
             #change to a value as per assignment
-            reward += 500
+            reward += self.reached_goal_reward
             rospy.loginfo("Done Reward: {}".format(reward))
 
         rospy.logdebug("END _compute_reward")
@@ -195,6 +193,6 @@ class UR3EnvTask(ur3_env.UR3Env):
         rospy.loginfo(self.pos)
         self.move_joints(self.pos)
         rospy.sleep(3)  # wait for some time
-        #rospy.loginfo("moved")
+        
 
    

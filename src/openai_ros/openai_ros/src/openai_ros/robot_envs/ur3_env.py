@@ -1,13 +1,11 @@
 """
 Add imports
 
-
-
 This should include (among others):
     - message types required by publishers/subscribers
     - relevant openai_ros imports
 """
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import gym
 import rospy
@@ -51,7 +49,7 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
         
 
         
-        
+        #Add the needed joint publishers
         self.publishers_array = {}
         self._shoulder_pan_pub = rospy.Publisher(
             '/ur3/shoulder_pan_joint_position_controller/command', Float64, queue_size=1)
@@ -81,7 +79,7 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
                          JointState, self.joints_callback)
         
         
-
+        #All the controllers
         self.controllers_list = ['joint_state_controller',        
                 'shoulder_pan_joint_position_controller',
                 'shoulder_lift_joint_position_controller',
@@ -93,8 +91,7 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
         
         self.robot_name_space = "ur3"
         self.reset_controls = True
-        # Seed the environment
-        #self._seed(0)
+        
         self.steps_beyond_done = None
 
         super(UR3Env, self).__init__(controllers_list=self.controllers_list,
@@ -104,22 +101,22 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
                                              reset_world_or_sim="WORLD")
         
     
-
-    def joints_callback(self, data):
-        #rospy.loginfo(data)
-        self.joints = data.position
-
-    def _seed(self, seed=None):
-        self.np_random, seed = seeding.np_random(seed)
-        return [seed]
-
-    
+     
 
 
     """
     Define subscriber callback function(s)
     Define necessary RobotEnv methods
     """
+
+     #Callback function for joint states
+    def joints_callback(self, data):
+        #Position is the only thing I am interested in
+        self.joints = data.position
+
+    def _seed(self, seed=None):
+        self.np_random, seed = seeding.np_random(seed)
+        return [seed]
 
     def _env_setup(self, initial_qpos):
         self.init_internal_vars(self.init_pos)
@@ -130,10 +127,10 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
         self.pos = init_pos_value
         self.joints = None
 
+    #Publisher readiness
     def check_publishers_connection(self):
         """
         Checks that all the publishers are working
-        :return:
         """
         rate = rospy.Rate(10)  # 10hz
         while (self._elbow_pub.get_num_connections() == 0 and not rospy.is_shutdown()):
@@ -199,6 +196,7 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
         rospy.logdebug("All Publishers READY")
 
 
+    #System readiness
     def _check_all_systems_ready(self, init=True):
         self.base_position = None
         while self.base_position is None and not rospy.is_shutdown():
@@ -212,7 +210,6 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
                     positions_ok = all(
                         abs(i) <= 1.0e-02 for i in self.base_position.position)
                     
-
                     base_data_ok = positions_ok 
                     rospy.logdebug(
                         "Checking Init Values Ok=>" + str(base_data_ok))
@@ -224,14 +221,14 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
 
 
     
-    
+    #Move the joints, joints array is a dictionary of joint:position
     def move_joints(self, joints_array):
         for k, v in joints_array.items():
             joint_value = Float64()
             joint_value.data = v
             rospy.logdebug("Move {} to {}.".format(k, str(joint_value)))
             self.publishers_array[k].publish(joint_value)
-            #rospy.sleep(1)
+            
 
     def get_clock_time(self):
         self.clock_time = None

@@ -3,7 +3,7 @@ ur3: #namespace
     # Task Realated parameters
     n_actions: 6 # shoulder_pan_joint+/-,shoulder_lift_joint+/-,elbow_joint+/-
     n_observations: 3
-
+    max_steps: 500
     max_iterations: 40
 
     init_pos:
@@ -21,8 +21,10 @@ ur3: #namespace
 
 
     position_delta: 0.1 # Increments/Decrements in the positions each action step
+    tolerance: 0.2 # The goal measure tolerance
+
 
     reached_goal_reward: 100
-    wait_time: 3
-    running_time: 0.2
+    wait_time: 3 #Time to wait after each reset
+    running_time: 0.2 #Time to wait after each move
 
