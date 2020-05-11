@@ -49,7 +49,7 @@ if __name__ == '__main__':
     rospack = rospkg.RosPack()
     pkg_path = rospack.get_path('my_ur3_description')
     outdir = pkg_path + '/training_results/sarsa'
-    env = wrappers.Monitor(env, outdir, force=True)
+    #env = wrappers.Monitor(env, outdir, force=True)
     rospy.loginfo ( "Monitor Wrapper started")
     
 

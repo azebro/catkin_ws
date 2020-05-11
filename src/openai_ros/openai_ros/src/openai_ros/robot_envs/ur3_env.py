@@ -124,7 +124,10 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
         self.check_all_systems_ready()
 
     def init_internal_vars(self, init_pos_value):
-        self.pos = init_pos_value
+        #Adding copy as otherwise the value will be overriden by another process
+        #and the arm will not return to start position and you will have to 
+        #use the workaround of extra step with action 10
+        self.pos = init_pos_value.copy()
         self.joints = None
 
     #Publisher readiness

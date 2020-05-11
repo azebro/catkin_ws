@@ -44,7 +44,7 @@ if __name__ == '__main__':
     epsilon_discount = rospy.get_param("/ur3/epsilon_discount")
     nepisodes = rospy.get_param("/ur3/nepisodes")
     nsteps = rospy.get_param("/ur3/nsteps")
-    running_step = rospy.get_param("/ur3/running_step")
+    
 
     # Create the Gym environment
     env = StartOpenAI_ROS_Environment('ur3-v0')
@@ -106,7 +106,7 @@ if __name__ == '__main__':
 
         #Move the robot to 0,0,0 position
         #This is a workaround for reset not bringing arm to the initial pose
-        env.step(10)
+        #env.step(10)
 
         #Loop for n-1 steps, the initial step was to move to 0
         for i in range(nsteps -1):
@@ -173,7 +173,6 @@ if __name__ == '__main__':
             rospy.logdebug("############### END Step=>" + str(i))
        
         #Required to stop the stats recorder wrapper, otherwise the exception will be raised
-        
         #env.stats_recorder.done = True
        
         m, s = divmod(int(time.time() - start_time), 60)
