@@ -30,7 +30,7 @@ def to_bin(value, bins):
 if __name__ == '__main__':
     
     #Fixing random to reproduce output
-    random.seed(10000000)
+    #random.seed(10000000)
 
     rospy.loginfo ( "Start!")
     rospy.init_node('ur3_gym_learn', anonymous=True, log_level=rospy.INFO)
@@ -57,7 +57,7 @@ if __name__ == '__main__':
     rospack = rospkg.RosPack()
     pkg_path = rospack.get_path('my_ur3_description')
     outdir = pkg_path + '/training_results/qlearn'
-    env = wrappers.Monitor(env, outdir, force=True)
+    #env = wrappers.Monitor(env, outdir, force=True, write_upon_reset=True)
     rospy.loginfo ( "Monitor Wrapper started")
     
 
@@ -111,10 +111,11 @@ if __name__ == '__main__':
         #Loop for n-1 steps, the initial step was to move to 0
         for i in range(nsteps -1):
             exit_flag = False
-            rospy.loginfo("############### Start Step=>"+str(i))
+            rospy.loginfo("############### Start-> Episode: {}, Step: {}".format(x, i))
+
             # Pick an action based on the current state
             action = qlearn.chooseAction(state)
-            rospy.loginfo ("Next action is:%d", action)
+    
             # Execute the action in the environment and get feedback
             observation, reward, done, info = env.step(action)
             elbow_obs, shoulder_lift_obs, shoulder_pan_obs = observation
@@ -149,23 +150,22 @@ if __name__ == '__main__':
             rospy.loginfo(nextState)
 
             # Make the algorithm learn based on the results
-            rospy.loginfo("############### state we were=>" + str(state))
-            rospy.loginfo("############### action that we took=>" + str(action))
-            rospy.loginfo("############### reward that action gave=>" + str(reward))
-            rospy.loginfo("############### State in which we will start nect step=>" + str(nextState))
+            rospy.loginfo("############### state we were->" + str(state))
+            rospy.loginfo("############### action that we took->" + str(action))
+            rospy.loginfo("############### reward that action gave->" + str(reward))
+            rospy.loginfo("############### State in which we will start nect step->" + str(nextState))
 
             #Learn using SARS
             qlearn.learn(state, action, reward, nextState)
-
-            if exit_flag:
-                env.stats_recorder.done = True
-                break
-
+            
+           
             if not(done):
                 state = nextState
+                
                 if i == nsteps -1:
                     rospy.loginfo("Exiting")
                     break
+                
             else:
                 rospy.logdebug ("DONE")
                 last_time_steps = numpy.append(last_time_steps, [int(i + 1)])
@@ -173,7 +173,8 @@ if __name__ == '__main__':
             rospy.logdebug("############### END Step=>" + str(i))
        
         #Required to stop the stats recorder wrapper, otherwise the exception will be raised
-        env.stats_recorder.done = True
+        
+        #env.stats_recorder.done = True
        
         m, s = divmod(int(time.time() - start_time), 60)
         h, m = divmod(m, 60)
