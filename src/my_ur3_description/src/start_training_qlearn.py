@@ -12,6 +12,7 @@ from gym import wrappers
 #from gym.envs.registration import register
 from openai_ros.openai_ros_common import StartOpenAI_ROS_Environment
 import pandas
+import functools
 
 
 # ROS packages required
@@ -30,7 +31,7 @@ def to_bin(value, bins):
 if __name__ == '__main__':
     
     #Fixing random to reproduce output
-    #random.seed(10000000)
+    #random.seed(1000000)
 
     rospy.loginfo ( "Start!")
     rospy.init_node('ur3_gym_learn', anonymous=True, log_level=rospy.INFO)
@@ -153,7 +154,7 @@ if __name__ == '__main__':
             rospy.loginfo("############### state we were->" + str(state))
             rospy.loginfo("############### action that we took->" + str(action))
             rospy.loginfo("############### reward that action gave->" + str(reward))
-            rospy.loginfo("############### State in which we will start nect step->" + str(nextState))
+            rospy.loginfo("############### State in which we will start next step->" + str(nextState))
 
             #Learn using SARS
             qlearn.learn(state, action, reward, nextState)
@@ -187,6 +188,6 @@ if __name__ == '__main__':
 
     #print("Parameters: a="+str)
     rospy.loginfo("Overall score: {:0.2f}".format(last_time_steps.mean()))
-    rospy.loginfo("Best 100 score: {:0.2f}".format(reduce(lambda x, y: x + y, l[-100:]) / len(l[-100:])))
+    rospy.loginfo("Best 100 score: {:0.2f}".format(functools.reduce(lambda x, y: x + y, l[-100:]) / len(l[-100:])))
 
     env.close()

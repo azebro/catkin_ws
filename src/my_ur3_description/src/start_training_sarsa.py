@@ -10,6 +10,7 @@ import sarsa
 from gym import wrappers
 from gym.envs.registration import register
 from openai_ros.openai_ros_common import StartOpenAI_ROS_Environment
+import functools
 
 
 # ROS packages required
@@ -36,7 +37,7 @@ if __name__ == '__main__':
     epsilon_discount = rospy.get_param("/ur3/epsilon_discount")
     nepisodes = rospy.get_param("/ur3/nepisodes")
     nsteps = rospy.get_param("/ur3/nsteps")
-    running_step = rospy.get_param("/ur3/running_step")
+    #running_step = rospy.get_param("/ur3/running_step")
 
     # Create the Gym environment
     
@@ -91,14 +92,14 @@ if __name__ == '__main__':
 
         #Loop for n-1 steps, the initial step was to move to 0
         for i in range(nsteps -1):
-            rospy.loginfo("############### Start Step=>"+str(i))
+            rospy.loginfo("############### Start Episode: {}, Step: {}>".format(x, i))
 
             # If this is the first run, get the action, otherwise use the action already known
             #from the previous run due to Sarsa needing 'next action'
             if action is None:
                 action = qlearn.chooseAction(state)
 
-            rospy.loginfo ("Next action is:%d", action)
+            #rospy.loginfo ("Next action is:%d", action)
             # Execute the action in the environment and get feedback
             observation, reward, done, info = env.step(action)
             rospy.logdebug(str(observation) + " " + str(reward))
@@ -115,7 +116,7 @@ if __name__ == '__main__':
             rospy.loginfo("############### state we were=>" + str(state))
             rospy.loginfo("############### action that we took=>" + str(action))
             rospy.loginfo("############### reward that action gave=>" + str(reward))
-            rospy.loginfo("############### State in which we will start nect step=>" + str(nextState))
+            rospy.loginfo("############### State in which we will start next step=>" + str(nextState))
 
             #Invoke learn based in SARSA
             qlearn.learn(state, action, reward, nextState, action2)
@@ -131,10 +132,11 @@ if __name__ == '__main__':
                 rospy.logdebug ("DONE")
                 last_time_steps = numpy.append(last_time_steps, [int(i + 1)])
                 break
-            rospy.logdebug("############### END Step=>" + str(i))
+            rospy.loginfo("############### END Step=> {}\n".format(i))
             
         #Required to stop the stats recorder wrapper, otherwise the exception will be raised
-        env.stats_recorder.done = True
+        #env.stats_recorder.done = True
+        
         m, s = divmod(int(time.time() - start_time), 60)
         h, m = divmod(m, 60)
         rospy.logdebug ( ("EP: "+str(x+1)+" - [alpha: "+str(round(qlearn.alpha,2))+" - gamma: "+str(round(qlearn.gamma,2))+" - epsilon: "+str(round(qlearn.epsilon,2))+"] - Reward: "+str(cumulated_reward)+"     Time: %d:%02d:%02d" % (h, m, s)))
@@ -146,6 +148,6 @@ if __name__ == '__main__':
     l.sort()
 
     rospy.loginfo("Overall score: {:0.2f}".format(last_time_steps.mean()))
-    rospy.loginfo("Best 100 score: {:0.2f}".format(reduce(lambda x, y: x + y, l[-100:]) / len(l[-100:])))
+    rospy.loginfo("Best 100 score: {:0.2f}".format(functools.reduce(lambda x, y: x + y, l[-100:]) / len(l[-100:])))
 
     env.close()

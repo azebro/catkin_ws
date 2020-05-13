@@ -25,7 +25,7 @@ ur3: #namespace
     #Number if iterations
     nepisodes: 500
     #Number of steps per iteration
-    nsteps: 1000
+    nsteps: 500
     
 
     init_pos: 0.0 # Position in which the base will start

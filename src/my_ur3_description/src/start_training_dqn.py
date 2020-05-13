@@ -7,6 +7,7 @@ from openai_ros.openai_ros_common import StartOpenAI_ROS_Environment
 import gym
 from baselines import deepq
 
+
 rospy.init_node('ur3_training_dqn', anonymous=True, log_level=rospy.WARN)
 
 
@@ -26,7 +27,7 @@ def main():
     rospack = rospkg.RosPack()
     pkg_path = rospack.get_path('my_ur3_description')
     outdir = pkg_path + '/training_results/dqn'
-    env = wrappers.Monitor(env, outdir, force=True)
+    #env = wrappers.Monitor(env, outdir, force=True)
     rospy.loginfo ( "Monitor Wrapper started")
     modelFile = outdir + "/ur3_model.pkl"
     
