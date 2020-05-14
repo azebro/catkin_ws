@@ -60,6 +60,7 @@ for joint in prompts.values():
     pub = rospy.Publisher(uri, Float64, queue_size = 1)
     publishers.append(pub)
 
+run = True
 
 while not rospy.is_shutdown() and run:
     

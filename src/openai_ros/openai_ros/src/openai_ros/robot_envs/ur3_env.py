@@ -256,6 +256,8 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
         timeout = rospy.get_time() + 1 #1s max timeouut
         rospy.logdebug(timeout)
         #Loop until either the arm is in position, or the timeout occurs
+        #This is related to the feedback on the discussion forum that we should
+        #check for joint position instead of wainting for fixed time
         while True:
             if self._check_joints_position(joints_array):
                 rospy.logdebug("In position")

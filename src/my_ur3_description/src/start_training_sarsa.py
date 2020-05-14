@@ -22,7 +22,7 @@ import rospkg
 if __name__ == '__main__':
 
     #Fix the randomness
-    random.seed(10000000)
+    #random.seed(10000000)
 
     rospy.loginfo ( "Start!")
     rospy.init_node('ur3_gym_learn', anonymous=True, log_level=rospy.INFO)
