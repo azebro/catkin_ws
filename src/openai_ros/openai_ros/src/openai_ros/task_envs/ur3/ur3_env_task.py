@@ -56,7 +56,6 @@ class UR3EnvTask(ur3_env.UR3Env):
         self.init_pos = rospy.get_param('/ur3/init_pos')
         self.gloal_pos = rospy.get_param('/ur3/goal_pos')
 
-        self.position_delta = rospy.get_param('/ur3/position_delta')
         self.reached_goal_reward = rospy.get_param('/ur3/reached_goal_reward')
 
         self.wait_time = rospy.get_param('/ur3/wait_time')
@@ -104,7 +103,7 @@ class UR3EnvTask(ur3_env.UR3Env):
 
         rospy.logdebug(
             "Wait for some time to execute movement, time="+str(self.running_time))
-        rospy.sleep(self.running_time)  # wait for some time
+        #rospy.sleep(self.running_time)  # wait for some time
         rospy.logdebug(
             "DONE Wait for some time to execute movement, time=" + str(self.wait_time))
 
@@ -191,8 +190,8 @@ class UR3EnvTask(ur3_env.UR3Env):
         # Reset Internal pos variable
         self.init_internal_vars(self.init_pos)
         rospy.loginfo(self.pos)
-        self.move_joints(self.pos)
-        rospy.sleep(3)  # wait for some time
+        self.move_joints( self.init_pos)
+        #rospy.sleep(3)  # wait for some time
         
 
    

@@ -29,6 +29,7 @@ from gazebo_msgs.msg import LinkState
 from rosgraph_msgs.msg import Clock
 from openai_ros import robot_gazebo_env
 from openai_ros.openai_ros_common import ROSLauncher
+from openai_ros.task_envs.task_commons import LoadYamlFileParamsTest
 
 
 
@@ -46,6 +47,11 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
         ROSLauncher(rospackage_name="my_ur3_description",
                     launch_file_name="ur3.launch",
                     ros_ws_abspath=ros_ws_abspath)
+
+         # Load Params from the desired Yaml file
+        LoadYamlFileParamsTest(rospackage_name="my_ur3_description",
+                               rel_path_from_package_to_file="config/",
+                               yaml_file_name="ur3_position_task.yaml")
         
 
         
@@ -93,6 +99,8 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
         self.reset_controls = True
         
         self.steps_beyond_done = None
+        self._tolerance = rospy.get_param('/ur3/tolerance')
+        self._wait_time = rospy.get_param('/ur3/wait_time')
 
         super(UR3Env, self).__init__(controllers_list=self.controllers_list,
                                              robot_name_space=self.robot_name_space,
@@ -120,8 +128,8 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
 
     def _env_setup(self, initial_qpos):
         self.init_internal_vars(self.init_pos)
-        self.set_init_pose()
-        self.check_all_systems_ready()
+        self._set_init_pose()
+        self._check_all_systems_ready()
 
     def init_internal_vars(self, init_pos_value):
         #Adding copy as otherwise the value will be overriden by another process
@@ -222,7 +230,20 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
                 
         rospy.logdebug("ALL SYSTEMS READY")
 
-
+    #Function to facilitate the check if the arm has arrived at the desired position +- tolerance
+    def _check_joints_position(self, joints_array):
+        #Probably a begining and the call back still has not happened
+        if self.joints is None:
+            rospy.logwarn("No subscription to /ur3/joint_states, assuming start")
+            rospy.sleep(self._wait_time) 
+            return True
+        
+        if ((abs(joints_array["elbow_joint"] - self.joints[0]) <= self._tolerance) and 
+            abs(joints_array["shoulder_lift_joint"] - self.joints[1]) <= self._tolerance and 
+            abs(joints_array["shoulder_pan_joint"] - self.joints[2]) <= self._tolerance):
+            return True
+        
+        return False
     
     #Move the joints, joints array is a dictionary of joint:position
     def move_joints(self, joints_array):
@@ -231,6 +252,21 @@ class UR3Env(robot_gazebo_env.RobotGazeboEnv):
             joint_value.data = v
             rospy.logdebug("Move {} to {}.".format(k, str(joint_value)))
             self.publishers_array[k].publish(joint_value)
+        #Assign timeout to 1s, the value could possibly go the the config
+        timeout = rospy.get_time() + 1 #1s max timeouut
+        rospy.logdebug(timeout)
+        #Loop until either the arm is in position, or the timeout occurs
+        while True:
+            if self._check_joints_position(joints_array):
+                rospy.logdebug("In position")
+                break
+            if rospy.get_time() > timeout:
+                rospy.logwarn("Arm not in position after timeout, possible joint stuck")
+                break
+            
+
+
+
             
 
     def get_clock_time(self):
